@@ -3,10 +3,10 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: gbouwen <marvin@codam.nl>                    +#+                      #
+#    By: gbouwen <gbouwen@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
-#    Created: 2020/07/28 09:54:49 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/07/28 14:54:07 by gbouwen       ########   odam.nl          #
+#    Created: 2020/07/29 09:28:51 by gbouwen       #+#    #+#                  #
+#    Updated: 2020/07/29 09:28:55 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 

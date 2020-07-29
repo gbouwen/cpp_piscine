@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   megaphone.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: gbouwen <marvin@codam.nl>                    +#+                     */
+/*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/28 09:54:24 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/07/28 12:29:45 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/07/29 09:29:01 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/07/29 09:29:03 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
