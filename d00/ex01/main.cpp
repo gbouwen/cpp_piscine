@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 09:29:33 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/07/29 13:22:14 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/03 12:02:24 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	searchAllContacts(Contact contacts[], int index)
 		std::cout << "Search an index in range [1 - " << index << "]." << std::endl;
 		std::cout << "Or use the BACK command to go back." << std::endl;
 		std::cout << "> ";
+		// USE std::getline INSTEAD OF std::cin !
 		std::cin >> input;
 		input_index = std::atoi(input.c_str());
 		if (input_index >= 1 && input_index <= index)
@@ -50,6 +51,7 @@ void	phonebookFull(Contact contacts[], int index)
 	{
 		std::cout << "Valid commands are: SEARCH, and EXIT." << std::endl;
 		std::cout << "> ";
+		// USE std::getline INSTEAD OF std::cin !
 		std::cin >> command;
 		if (command.compare("SEARCH") == 0)
 			searchAllContacts(contacts, index);
@@ -70,6 +72,7 @@ int		main(void)
 	{
 		std::cout << "Valid commands are: ADD, SEARCH, and EXIT." << std::endl;
 		std::cout << "> ";
+		// USE std::getline INSTEAD OF std::cin !
 		std::cin >> command;
 		if (index == 8)
 		{
