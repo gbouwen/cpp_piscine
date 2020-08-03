@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:11:26 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/03 17:19:00 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/03 17:36:10 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	ponyOnTheStack()
 {
-	Pony	heap = Pony("Heap", "black", 10);
+	Pony	stack = Pony("Stack", "black", 10);
 
-	heap.jump();
-	heap.eat();
-	heap.sleep();
-	heap.getName();
-	heap.getColor();
-	heap.getAge();
+	stack.jump();
+	stack.eat();
+	stack.sleep();
+	stack.getName();
+	stack.getColor();
+	stack.getAge();
 }
 
 void	ponyOnTheHeap()
 {
-	Pony	*stack = new Pony("Stack", "white", 5);
+	Pony	*heap= new Pony("Heap", "white", 5);
 
-	stack->jump();
-	stack->eat();
-	stack->sleep();
-	stack->getName();
-	stack->getColor();
-	stack->getAge();
-	delete stack;
+	heap->jump();
+	heap->eat();
+	heap->sleep();
+	heap->getName();
+	heap->getColor();
+	heap->getAge();
+	delete heap;
 }
 
 int	main(void)
