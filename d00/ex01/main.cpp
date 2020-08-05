@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 09:29:33 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/03 12:02:24 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/05 11:12:07 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	searchAllContacts(Contact contacts[], int index)
 {
-	std::string	input;
+	std::string	command;
 	int			input_index;
 
 	for (int i = 0; i < index; i++)
@@ -30,15 +30,14 @@ void	searchAllContacts(Contact contacts[], int index)
 		std::cout << "Search an index in range [1 - " << index << "]." << std::endl;
 		std::cout << "Or use the BACK command to go back." << std::endl;
 		std::cout << "> ";
-		// USE std::getline INSTEAD OF std::cin !
-		std::cin >> input;
-		input_index = std::atoi(input.c_str());
-		if (input_index >= 1 && input_index <= index)
+		getline(std::cin, command);
+		input_index = std::atoi(command.c_str());
+		if (input_index >= 1 && input_index <= index && command.length() == 1)
 			contacts[input_index - 1].searchContactFull();
-		if ((input_index < 1 || input_index > index) && input.compare("BACK") != 0)
+		if (command.compare("BACK") != 0)
 			std::cout << "INVALID INPUT." << std::endl;
 	}
-	while (input.compare("BACK") != 0);
+	while (command.compare("BACK") != 0);
 }
 
 void	phonebookFull(Contact contacts[], int index)
@@ -51,8 +50,7 @@ void	phonebookFull(Contact contacts[], int index)
 	{
 		std::cout << "Valid commands are: SEARCH, and EXIT." << std::endl;
 		std::cout << "> ";
-		// USE std::getline INSTEAD OF std::cin !
-		std::cin >> command;
+		getline(std::cin, command);
 		if (command.compare("SEARCH") == 0)
 			searchAllContacts(contacts, index);
 	}
@@ -72,8 +70,7 @@ int		main(void)
 	{
 		std::cout << "Valid commands are: ADD, SEARCH, and EXIT." << std::endl;
 		std::cout << "> ";
-		// USE std::getline INSTEAD OF std::cin !
-		std::cin >> command;
+		getline(std::cin, command);
 		if (index == 8)
 		{
 			phonebookFull(contacts, index);

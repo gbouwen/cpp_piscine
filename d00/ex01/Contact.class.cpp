@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 09:29:15 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/07/29 13:38:24 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/05 11:14:12 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,27 @@ void		Contact::addContact(int index)
 	this->_index = index;
 	std::cout << "Please fill in the following information: " << std::endl;
 	std::cout << "- First name: ";
-	std::cin >> this->_firstName;
+	getline(std::cin, this->_firstName);
 	std::cout << "- Last name: ";
-	std::cin >> this->_lastName;
+	getline(std::cin, this->_lastName);
 	std::cout << "- Nickname: ";
-	std::cin >> this->_nickName;
+	getline(std::cin, this->_nickName);
 	std::cout << "- Login: ";
-	std::cin >> this->_login;
+	getline(std::cin, this->_login);
 	std::cout << "- Postal address: ";
-	std::cin >> this->_postalAddress;
+	getline(std::cin, this->_postalAddress);
 	std::cout << "- Email address: ";
-	std::cin >> this->_emailAddress;
+	getline(std::cin, this->_emailAddress);
 	std::cout << "- Phone number: ";
-	std::cin >> this->_phoneNumber;
+	getline(std::cin, this->_phoneNumber);
 	std::cout << "- Birthday date: ";
-	std::cin >> this->_birthdayDate;
+	getline(std::cin, this->_birthdayDate);
 	std::cout << "- Favorite meal: ";
-	std::cin >> this->_favoriteMeal;
+	getline(std::cin, this->_favoriteMeal);
 	std::cout << "- Underwear color: ";
-	std::cin >> this->_underwearColor;
+	getline(std::cin, this->_underwearColor);
 	std::cout << "- Darkest secret: ";
-	std::cin >> this->_darkestSecret;
+	getline(std::cin, this->_darkestSecret);
 	std::cout << "Contact added successfully!" << std::endl;
 }
 
