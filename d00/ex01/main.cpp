@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 09:29:33 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/05 11:12:07 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/18 14:40:08 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	searchAllContacts(Contact contacts[], int index)
 		input_index = std::atoi(command.c_str());
 		if (input_index >= 1 && input_index <= index && command.length() == 1)
 			contacts[input_index - 1].searchContactFull();
-		if (command.compare("BACK") != 0)
+		else if (command.compare("BACK") != 0)
 			std::cout << "INVALID INPUT." << std::endl;
 	}
 	while (command.compare("BACK") != 0);
