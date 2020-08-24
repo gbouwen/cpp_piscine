@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 17:51:04 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/04 11:49:46 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/24 11:52:44 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ public:
 	Human(void);
 	~Human(void);
 
-	const Brain&	getBrain(void);
-	const Brain		*identify(void) const;
+	Brain const &getBrain(void);
+	Brain const *identify(void) const;
 
 private:
 
-	const Brain	_brain;
+	Brain const	_brain;
 
 };
 

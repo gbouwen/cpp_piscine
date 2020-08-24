@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 17:50:40 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/04 11:49:15 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/24 11:51:48 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Brain::~Brain(void)
 	return ;
 }
 
-const Brain	*Brain::identify(void) const
+Brain const	*Brain::identify(void) const
 {
 	return (this);
 }
