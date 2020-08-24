@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 13:40:37 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/05 14:14:04 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/24 12:26:39 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed(void)
 	return ;
 }
 
-Fixed::Fixed(const Fixed &src)
+Fixed::Fixed(Fixed const &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
@@ -32,7 +32,7 @@ Fixed::~Fixed(void)
 	return ;
 }
 
-Fixed &	Fixed::operator=(const Fixed &src)
+Fixed	&Fixed::operator=(Fixed const &src)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->_value = src.getRawBits();
@@ -45,7 +45,7 @@ int		Fixed::getRawBits(void) const
 	return (this->_value);
 }
 
-void	Fixed::setRawBits(const int raw)
+void	Fixed::setRawBits(int const raw)
 {
 	this->_value = raw;
 	return ;

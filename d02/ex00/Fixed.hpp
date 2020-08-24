@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 13:40:41 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/05 14:14:00 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/24 12:26:10 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@ class Fixed
 public:
 
 	Fixed(void);
-	Fixed(const Fixed &src);
+	Fixed(Fixed const &src);
 	~Fixed(void);
 
-	Fixed	&operator=(const Fixed &src);
+	Fixed	&operator=(Fixed const &src);
 
 	int		getRawBits(void) const;
-	void	setRawBits(const int raw);
+	void	setRawBits(int const raw);
 
 private:
 
 	int					_value;
-	const static int	_fractionalBits = 8;
+	static int const	_fractionalBits = 8;
 
 };
 
