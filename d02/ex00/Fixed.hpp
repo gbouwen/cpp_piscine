@@ -6,14 +6,14 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 13:40:41 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/24 12:26:10 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/24 12:33:36 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-#include <iostream>
+# include <iostream>
 
 class Fixed
 {
