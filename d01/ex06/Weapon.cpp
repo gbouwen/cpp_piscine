@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 13:05:17 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/04 14:35:13 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/24 11:54:11 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Weapon::~Weapon(void)
 	return ;
 }
 
-const std::string&	Weapon::getType(void) const
+std::string	const	&Weapon::getType(void) const
 {
 	return (this->_type);
 }

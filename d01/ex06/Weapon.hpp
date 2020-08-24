@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 13:05:22 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/04 14:22:03 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/24 11:54:27 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	Weapon(std::string type);
 	~Weapon(void);
 
-	const std::string&	getType(void) const;
+	std::string	const	&getType(void) const;
 	void				setType(std::string);
 
 private:
