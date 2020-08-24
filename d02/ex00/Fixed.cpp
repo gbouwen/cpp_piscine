@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 13:40:37 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/24 12:26:39 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/24 12:48:36 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const raw)
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 	return ;
 }
