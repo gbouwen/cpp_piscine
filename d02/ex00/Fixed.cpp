@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 13:40:37 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/24 12:48:36 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/25 13:08:02 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ Fixed::~Fixed(void)
 	return ;
 }
 
-Fixed	&Fixed::operator=(Fixed const &src)
+Fixed	&Fixed::operator=(Fixed const &rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	this->_value = src.getRawBits();
+	this->_value = rhs.getRawBits();
 	return (*this);
 }
 

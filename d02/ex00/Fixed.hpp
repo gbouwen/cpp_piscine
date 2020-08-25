@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 13:40:41 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/24 12:33:36 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/25 13:07:49 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	Fixed(Fixed const &src);
 	~Fixed(void);
 
-	Fixed	&operator=(Fixed const &src);
+	Fixed	&operator=(Fixed const &rhs);
 
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
