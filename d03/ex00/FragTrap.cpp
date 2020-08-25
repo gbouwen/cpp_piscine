@@ -118,7 +118,7 @@ void	FragTrap::vaultHunter_dot_exe(std::string const &target)
 		this->_energyPoints -= 25;
 		std::string	attacks[5] = { "Grenade", "Sniper", "Shotgun", "C4", "Flamethrower" };
 
-		std::cout << "[" << this->_name << "]: Hit [" << target << "] with a " << attacks[rand() % 5] << "!" << std::endl;
+		std::cout << "[" << this->_name << "]: Hit " << target << " with a " << attacks[rand() % 5] << "!" << std::endl;
 	}
 	else
 		std::cout << "[" << this->_name << "]: I don't have enough energy left for this move..." << std::endl;
