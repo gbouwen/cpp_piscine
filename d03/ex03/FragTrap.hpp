@@ -22,10 +22,7 @@ public:
 
 	FragTrap(void);
 	FragTrap(std::string name);
-	FragTrap(FragTrap const &src);
 	~FragTrap(void);
-
-	FragTrap	&operator=(FragTrap const &rhs);
 
 	void	vaultHunter_dot_exe(std::string const &target);
 };
