@@ -75,11 +75,11 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 
 void	ScavTrap::challengeNewcomer(std::string const &newcomer)
 {
-	std::string	challenges [5] { "A game of Rock, Paper, Scissors",
+	std::string	challenges [5] { "Game of Rock, Paper, Scissors",
 								"Dance battle",
 								"100 meter sprint",
-								"A game of chess",
-								"A game of smash bros" };
+								"Game of chess",
+								"Game of smash bros" };
 
 	std::cout	<< "SCAVTRAP [" << this->_name << "]: AHA " << newcomer << ". I challenge you to a "
 				<< challenges[rand() % 5] << "!" << std::endl;
