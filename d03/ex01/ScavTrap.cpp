@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/25 16:46:09 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/26 11:37:06 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ void	ScavTrap::challengeNewcomer(std::string const &newcomer)
 								"A game of chess",
 								"A game of smash bros" };
 
-	std::cout << "AHA " << newcomer << ". I challenge you to a " << challenges[rand() % 5] << "!" << std::endl;
+	std::cout	<< "[" << this->_name << "]: AHA " << newcomer << ". I challenge you to a "
+				<< challenges[rand() % 5] << "!" << std::endl;
 	return ;
 }
