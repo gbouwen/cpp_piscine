@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/26 12:03:39 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/26 16:20:45 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,35 +42,10 @@ ScavTrap::ScavTrap(std::string name)
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &src)
-{
-	*this = src;
-	std::cout << "SCAVTRAP [" << this->_name << "]: Holy crap, that worked?!" << std::endl;
-	return ;
-}
-
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << "SCAVTRAP [" << this->_name << "]: My robotic flesh! AAHH!" << std::endl;
 	return ;
-}
-
-ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
-{
-	if (this != &rhs)
-	{
-		this->_hitPoints = rhs._hitPoints;
-		this->_maxHitPoints = rhs._maxHitPoints;
-		this->_energyPoints = rhs._energyPoints;
-		this->_maxEnergyPoints = rhs._maxEnergyPoints;
-		this->_level = rhs._level;
-		this->_name = rhs._name;
-		this->_meleeAttackDamage = rhs._meleeAttackDamage;
-		this->_rangedAttackDamage = rhs._rangedAttackDamage;
-		this->_armorDamageReduction = rhs._armorDamageReduction;
-	}
-	std::cout << "SCAVTRAP [" << this->_name << "]: Running the sequencer!" << std::endl;
-	return (*this);
 }
 
 void	ScavTrap::challengeNewcomer(std::string const &newcomer)
