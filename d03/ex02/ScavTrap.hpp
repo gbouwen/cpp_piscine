@@ -6,14 +6,14 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/25 17:07:55 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/26 11:26:03 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-# include <iostream>
+# include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {

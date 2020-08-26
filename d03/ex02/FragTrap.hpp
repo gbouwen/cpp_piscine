@@ -6,14 +6,14 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/25 17:07:46 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/26 11:26:22 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-# include <iostream>
+# include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
 {

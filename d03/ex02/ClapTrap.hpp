@@ -6,14 +6,14 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 16:38:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/25 17:07:12 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/26 11:24:24 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-#include <iostream>
+# include <iostream>
 
 class ClapTrap
 {
