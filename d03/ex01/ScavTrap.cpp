@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/26 11:37:06 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/26 13:48:23 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,11 +113,11 @@ void	ScavTrap::beRepaired(unsigned int amount)
 
 void	ScavTrap::challengeNewcomer(std::string const &newcomer)
 {
-	std::string	challenges[5] { "A game of Rock, Paper, Scissors",
+	std::string	challenges[5] { "Game of Rock, Paper, Scissors",
 								"Dance battle",
 								"100 meter sprint",
-								"A game of chess",
-								"A game of smash bros" };
+								"Game of chess",
+								"Game of smash bros" };
 
 	std::cout	<< "[" << this->_name << "]: AHA " << newcomer << ". I challenge you to a "
 				<< challenges[rand() % 5] << "!" << std::endl;
