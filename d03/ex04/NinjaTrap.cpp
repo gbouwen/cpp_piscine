@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 13:01:01 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/26 13:45:56 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/08/26 16:28:21 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,35 +42,10 @@ NinjaTrap::NinjaTrap(std::string name)
 	return ;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const &src)
-{
-	*this = src;
-	std::cout << "3NinjaTrap here!" << std::endl;
-	return ;
-}
-
 NinjaTrap::~NinjaTrap(void)
 {
 	std::cout << "NinjaTrap out!" << std::endl;
 	return ;
-}
-
-NinjaTrap	&NinjaTrap::operator=(NinjaTrap const &rhs)
-{
-	std::cout << "NinjaTrap =" << std::endl;
-	if (this != &rhs)
-	{
-		this->_hitPoints = rhs._hitPoints;
-		this->_maxHitPoints = rhs._maxHitPoints;
-		this->_energyPoints = rhs._energyPoints;
-		this->_maxEnergyPoints = rhs._maxEnergyPoints;
-		this->_level = rhs._level;
-		this->_name = rhs._name;
-		this->_meleeAttackDamage = rhs._meleeAttackDamage;
-		this->_rangedAttackDamage = rhs._rangedAttackDamage;
-		this->_armorDamageReduction = rhs._armorDamageReduction;
-	}
-	return (*this);
 }
 
 void	NinjaTrap::ninjaShoebox(FragTrap &ft)
