@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:34:36 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/01 15:33:58 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/01 16:12:34 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SORCERER_HPP
 
 # include <iostream>
+# include "Victim.hpp"
 
 class Sorcerer
 {
@@ -28,6 +29,7 @@ public:
 
 	std::string	getName(void) const;
 	std::string	getTitle(void) const;
+	void		polymorph(Victim const &victim) const;
 
 private:
 

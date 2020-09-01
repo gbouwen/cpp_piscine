@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:34:58 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/01 15:41:09 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/01 16:12:59 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ std::string	Sorcerer::getName(void) const
 std::string	Sorcerer::getTitle(void) const
 {
 	return (this->_title);
+}
+
+void		Sorcerer::polymorph(Victim const &victim) const
+{
+	victim.getPolymorphed();
+	return ;
 }
 
 std::ostream	&operator<<(std::ostream &o, Sorcerer const &src)

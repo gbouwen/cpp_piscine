@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:35:18 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/01 15:51:30 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/01 16:05:09 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,12 @@ Victim	&Victim::operator=(Victim const &rhs)
 std::string	Victim::getName(void) const
 {
 	return (this->_name);
+}
+
+void		Victim::getPolymorphed(void) const
+{
+	std::cout << this->_name << " has been turned into a cute little sheep!" << std::endl;
+	return ;
 }
 
 std::ostream	&operator<<(std::ostream &o, Victim const &src)

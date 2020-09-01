@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:35:10 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/01 15:49:40 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/01 16:50:50 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ public:
 
 	Victim	&operator=(Victim const &rhs);
 
-	std::string	getName(void) const;
+	std::string		getName(void) const;
+	virtual	void	getPolymorphed(void) const;
 
-private:
+protected:
 
 	Victim(void);
 
