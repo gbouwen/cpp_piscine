@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:34:58 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/01 15:08:33 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/01 15:41:09 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 Sorcerer::Sorcerer(void)
 {
-	std::cout << "Class can't be instanciated without NAME and TITLE parameters." << std::endl;
 	return ;
 }
 
 Sorcerer::Sorcerer(std::string name, std::string title) : _name(name), _title(title)
 {
-	std::cout << this->_name << ", " << this->_title << "," << "is born!" << std::endl;
+	std::cout << this->_name << ", " << this->_title << ", " << "is born!" << std::endl;
 	return ;
 }
 
@@ -46,12 +45,12 @@ Sorcerer	&Sorcerer::operator=(Sorcerer const &rhs)
 	return (*this);
 }
 
-std::string		Sorcerer::getName(void) const
+std::string	Sorcerer::getName(void) const
 {
 	return (this->_name);
 }
 
-std::string		Sorcerer::getTitle(void) const
+std::string	Sorcerer::getTitle(void) const
 {
 	return (this->_title);
 }

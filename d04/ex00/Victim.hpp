@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Sorcerer.hpp                                           :+:    :+:        */
+/*   Victim.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/01 13:34:36 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/01 15:33:58 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/01 13:35:10 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/09/01 15:49:40 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-# define SORCERER_HPP
+#ifndef VICTIM_HPP
+# define VICTIM_HPP
 
 # include <iostream>
 
-class Sorcerer
+class Victim
 {
 
 public:
 
-	Sorcerer(Sorcerer const &src);
-	Sorcerer(std::string name, std::string title);
-	~Sorcerer(void);
+	Victim(std::string name);
+	Victim(Victim const &src);
+	~Victim(void);
 
-	Sorcerer	&operator=(Sorcerer const &rhs);
+	Victim	&operator=(Victim const &rhs);
 
 	std::string	getName(void) const;
-	std::string	getTitle(void) const;
 
 private:
 
-	Sorcerer(void);
+	Victim(void);
 
 	std::string	_name;
-	std::string _title;
 };
 
-std::ostream	&operator<<(std::ostream &o, Sorcerer const &src);
+std::ostream	&operator<<(std::ostream &o, Victim const &src);
 
 #endif
