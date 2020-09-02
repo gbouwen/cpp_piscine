@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AWeapon.hpp                                        :+:    :+:            */
+/*   Enemy.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/02 11:15:33 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 13:13:05 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/02 13:10:14 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/09/02 13:31:04 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AWEAPON_HPP
-# define AWEAPON_HPP
+#ifndef ENEMY_HPP
+# define ENEMY_HPP
 
 # include <iostream>
 
-class AWeapon
+class Enemy
 {
 
 public:
 
-	AWeapon(void);
-	AWeapon(std::string const &name, int apcost, int damage);
-	AWeapon(AWeapon const &src);
-	virtual ~AWeapon(void);
+	Enemy(void);
+	Enemy(std::string const &type, int hp);
+	Enemy(Enemy const &src);
+	virtual	~Enemy(void);
 
-	AWeapon	&operator=(AWeapon const &rhs);
+	Enemy	&operator=(Enemy const &rhs);
 
-	std::string	const	getName(void) const;
-	int					getDamage(void) const;
-	int					getAPCost(void) const;
-
-	virtual void	attack(void) const = 0;
+	std::string	const	getType(void) const;
+	int					getHP(void) const;
+	virtual void		takeDamage(int damage);
 
 protected:
 
-	std::string	_name;
-	int			_damage;
-	int			_apCost;
+	std::string const 	&_type;
+	int					_hp
 };
 
 #endif

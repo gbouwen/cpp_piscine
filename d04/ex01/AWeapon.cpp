@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 11:26:01 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 11:43:21 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/02 13:13:30 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,17 @@ AWeapon	&AWeapon::operator=(AWeapon const &rhs)
 	return (*this);
 }
 
-std::string	AWeapon::getName(void) const
+std::string	const	AWeapon::getName(void) const
 {
 	return (this->_name);
 }
 
-int			AWeapon::getDamage(void) const
+int					AWeapon::getDamage(void) const
 {
 	return (this->_damage);
 }
 
-int			AWeapon::getAPCost(void) const
+int					AWeapon::getAPCost(void) const
 {
 	return (this->_apCost);
 }
