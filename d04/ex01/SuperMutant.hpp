@@ -24,6 +24,6 @@ public:
 	~SuperMutant(void);
 
 	void	takeDamage(int damage);
-}
+};
 
 #endif

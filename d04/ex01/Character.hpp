@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:48:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 14:38:40 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/02 15:22:19 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,15 @@ public:
 	void	attack(Enemy *enemy);
 
 	std::string const	getName(void) const;
-	int const			getAP(void)	const;
+	int 				getAP(void)	const;
 	std::string	const	getWeaponName(void) const;
+	int					isWeapon(void) const;
 
 private:
 
-	std::string &_name;
+	std::string _name;
 	int			_ap;
-	AWeapon		*weapon;
+	AWeapon		*_weapon;
 };
 
 std::ostream	&operator<<(std::ostream &o, Character const &src);

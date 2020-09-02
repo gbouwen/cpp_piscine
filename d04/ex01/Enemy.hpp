@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:10:14 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 13:31:04 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/02 15:28:04 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ class Enemy
 
 public:
 
-	Enemy(void);
-	Enemy(std::string const &type, int hp);
+	Enemy(std::string type, int hp);
 	Enemy(Enemy const &src);
 	virtual	~Enemy(void);
 
@@ -33,8 +32,10 @@ public:
 
 protected:
 
-	std::string const 	&_type;
-	int					_hp
+	Enemy(void);
+
+	std::string	_type;
+	int			_hp;
 };
 
 #endif

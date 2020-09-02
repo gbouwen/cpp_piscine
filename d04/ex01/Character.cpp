@@ -6,18 +6,18 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:57:35 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 14:44:27 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/02 15:30:39 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(void)
+Character::Character(void) : _name("default"), _ap(40), _weapon(NULL)
 {
 	return ;
 }
 
-Character::Character(std::string const &name) : _name(name), _ap(40)
+Character::Character(std::string const &name) : _name(name), _ap(40), _weapon(NULL)
 {
 	return ;
 }
@@ -54,42 +54,49 @@ void	Character::attack(Enemy *target)
 {
 	if (this->_weapon)
 	{
-		std::cout << this->_name << "attacks " << target->getType() << " with a " << target->getWeaponName() << std::endl;
-		this->_ap -= this->_weapon.getAPCost();
-		this->_weapon.attack();
-		target.takeDamage(this->_weapon.getDamage());
-		if (target.getHP() <= 0)
+		std::cout << this->_name << " attacks " << target->getType() << " with a " << this->getWeaponName() << std::endl;
+		this->_ap -= this->_weapon->getAPCost();
+		this->_weapon->attack();
+		target->takeDamage(this->_weapon->getDamage());
+		if (target->getHP() <= 0)
 			delete (target);
 	}
 	return ;
 }
 
-void	equip(Aweapon *weapon)
+void	Character::equip(AWeapon *weapon)
 {
-	this->_weapon = *weapon;
+	this->_weapon = weapon;
 	return ;
 }
 
-std::string const	getName(void) const
+std::string const	Character::getName(void) const
 {
 	return (this->_name);
 }
 
-int const			getAP(void) const
+int 				Character::getAP(void) const
 {
 	return (this->_ap);
 }
 
-std::string const	getWeaponName(void) const
+std::string const	Character::getWeaponName(void) const
 {
-	return (this->_weapon.getName());
+	return (this->_weapon->getName());
 }
 
-std::ostream	&Character::operator<<(std::ostream &o, Character const &src)
+int					Character::isWeapon(void) const
 {
-	if (src.getWeaponName())
+	if (this->_weapon)
+		return (1);
+	return (0);
+}
+
+std::ostream	&operator<<(std::ostream &o, Character const &src)
+{
+	if (src.isWeapon())
 		std::cout << src.getName() << " has " << src.getAP() << " AP and wields a " << src.getWeaponName() << std::endl;
 	else
-		std::cout << src.getName() << " has " << src.getAP() << " and is unarmed" << std::endl;
+		std::cout << src.getName() << " has " << src.getAP() << " AP and is unarmed" << std::endl;
 	return (o);
 }

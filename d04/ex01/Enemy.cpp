@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:16:24 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 13:44:28 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/02 15:29:04 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ Enemy	&Enemy::operator=(Enemy const &rhs)
 	return (*this);
 }
 
-std::string const	getType(void) const
+std::string const	Enemy::getType(void) const
 {
 	return (this->_type);
 }
 
-int					getHP(void) const
+int					Enemy::getHP(void) const
 {
 	return (this->_hp);
 }
 
-virtual void		takeDamage(int damage)
+void		Enemy::takeDamage(int damage)
 {
 	if (damage > 0)
 		this->_hp -= damage;
