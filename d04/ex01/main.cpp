@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 12:03:01 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 15:30:03 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/02 16:22:39 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,39 @@ int	main(void)
 
 	std::cout << *me;
 
-	Enemy		*b = new RadScorpion();
+	Enemy		*scorp = new RadScorpion();
+	Enemy		*mutant = new SuperMutant();
 	AWeapon		*pr = new PlasmaRifle();
 	AWeapon		*pf = new PowerFist();
 
 	me->equip(pr);
 	std::cout << *me;
 	me->equip(pf);
-	me->attack(b);
+	me->attack(scorp);
 	std::cout << *me;
 	me->equip(pr);
 	std::cout << *me;
-	me->attack(b);
+	me->attack(scorp);
 	std::cout << *me;
-	me->attack(b);
+	me->attack(scorp);
+	std::cout << *me;
+	me->attack(mutant);
+	std::cout << *me;
+	me->attack(mutant);
+	me->attack(mutant);
+	std::cout << *me;
+	me->attack(mutant);
+	me->attack(mutant);
+	std::cout << *me;
+	me->recoverAP();
+	me->recoverAP();
+	me->recoverAP();
+	me->recoverAP();
+	std::cout << *me;
+	me->equip(pf);
+	me->attack(mutant);
+	me->attack(mutant);
+	me->attack(mutant);
 	std::cout << *me;
 
 	return (0);

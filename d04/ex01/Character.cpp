@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:57:35 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 15:30:39 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/02 16:21:40 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	Character::recoverAP(void)
 
 void	Character::attack(Enemy *target)
 {
-	if (this->_weapon)
+	if (target && this->_weapon && this->_ap >= this->_weapon->getAPCost())
 	{
 		std::cout << this->_name << " attacks " << target->getType() << " with a " << this->getWeaponName() << std::endl;
 		this->_ap -= this->_weapon->getAPCost();
@@ -61,6 +61,8 @@ void	Character::attack(Enemy *target)
 		if (target->getHP() <= 0)
 			delete (target);
 	}
+	else
+		std::cout << "no attack was possible! Recover your AP!" << std::endl;
 	return ;
 }
 
