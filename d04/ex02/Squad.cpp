@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 11:59:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/03 15:25:14 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/04 11:08:11 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ Squad::~Squad(void)
 
 Squad	&Squad::operator=(Squad const &rhs)
 {
-	if (this != rhs)
+	if (this != &rhs)
 	{
 		for (int i = 0; i < this->_count; i++)
 			delete (this->_marines[i]);
 		delete [] (this->_marines);
-		this->_count = rhs.count;
-		this->_maxSize = rhs.maxSize;
+		this->_count = rhs._count;
+		this->_maxSize = rhs._maxSize;
 		this->_marines = new ISpaceMarine*[this->_maxSize];
 		for (int i = 0; i < this->_count; i++)
-			this->_marines[i] = rhs.marines[i].clone();
+			this->_marines[i] = rhs._marines[i]->clone();
 	}
 	return (*this);
 }
@@ -62,7 +62,16 @@ ISpaceMarine	*Squad::getUnit(int n) const
 	return (this->_marines[n]);
 }
 
-int				Squad::push(ISpaceMarine *marine)
+int				Squad::push(ISpaceMarine *newMarine)
 {
+	if (newMarine == NULL)
+		return (this->_count);
+	for (int i = 0; i < this->_count; i++)
+	{
+		if (this->_marines[i] == newMarine)
+			return (this->_count);
+	}
+	this->_marines[this->_count] = newMarine;
+	this->_count++;
 	return (this->_count);
 }

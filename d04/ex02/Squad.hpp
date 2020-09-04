@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 11:51:04 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/03 14:59:19 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/04 11:07:24 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SQUAD_HPP
 
 # include "ISquad.hpp"
+# include "ISpaceMarine.hpp"
 
 class Squad : public ISquad
 {
@@ -28,13 +29,13 @@ public:
 
 	int				getCount(void) const;
 	ISpaceMarine	*getUnit(int) const;
-	int				push(ISpaceMarine *marine);
+	int				push(ISpaceMarine *newMarine);
 
 private:
 
 	int	_count;
 	int	_maxSize;
-	ISpaceMarines	**_marines;
+	ISpaceMarine	**_marines;
 };
 
 #endif
