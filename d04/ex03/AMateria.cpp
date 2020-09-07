@@ -6,24 +6,25 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 14:18:48 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/07 14:54:14 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/07 15:49:03 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(void)
+AMateria::AMateria(void) : _type("AMateria"), _xp(0)
 {
 	return ;
 }
 
-AMateria::AMateria(std::string const &type) : _type(type)
+AMateria::AMateria(std::string const &type) : _type(type), _xp(0)
 {
 	return ;
 }
 
 AMateria::AMateria(AMateria const &src)
 {
+	*this = src;
 	return ;
 }
 
@@ -34,6 +35,11 @@ AMateria::~AMateria(void)
 
 AMateria	&AMateria::operator=(AMateria const &rhs)
 {
+	if (this != &rhs)
+	{
+		this->_type = rhs._type;
+		this->_xp = rhs._xp;
+	}
 	return ;
 }
 
@@ -49,14 +55,7 @@ unsigned int		AMateria::getXP(void) const
 
 void				AMateria::use(ICharacter &target);
 {
-	if (this->_type == "ice")
-	{
-		std::cout << "* shoots an ice bolt at " << target->_name << std::endl;
-		this->_xp += 10;
-	}
-	if (this->_type == "cure")
-	{
-		std::cout << "* heals " << target->_name << "'s wounds *" << std::endl;
-		this->_xp += 10;
-	}
+	std::cout << "Used AMateria on " << target.getType() << std::endl;
+	this-_xp += 10;
+	return ;
 }
