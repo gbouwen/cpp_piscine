@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AMateria.hpp                                       :+:    :+:            */
+/*   Cure.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/04 11:17:19 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/07 10:55:34 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/07 11:07:52 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/09/07 11:14:15 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-# include <iostream>
+# include "AMateria.hpp"
 # include "ICharacter.hpp"
 
-class AMateria
+class Cure : public AMateria
 {
 
 public:
 
-	AMateria(void);
-	AMateria(std::string const &type);
-	AMateria(AMateria const &src);
-	~AMateria(void);
+	Cure(void);
+	Cure(Cure const &src);
+	~Cure(void);
 
-	AMateria	&operator=(AMateria const &rhs);
+	Cure	&operator=(Cure const &rhs);
 
-	std::string const	&getType(void) const;
-	unsigned int		getXP(void) const;
-
-	virtual AMateria	*clone(void) const = 0;
-	virtual void		use(ICharacter &target);
+	Cure	*clone(void);
+	void	use(ICharacter &target);
 
 private:
 
-	unsigned int _xp;
+	unsigned int	_xp;
 };
 
 #endif

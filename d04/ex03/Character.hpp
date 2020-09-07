@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AMateria.hpp                                       :+:    :+:            */
+/*   Character.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/04 11:17:19 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/07 10:55:34 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/07 13:40:41 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/09/07 13:45:08 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-# include <iostream>
-# include "ICharacter.hpp"
-
-class AMateria
+class Character : public ICharacter
 {
 
 public:
 
-	AMateria(void);
-	AMateria(std::string const &type);
-	AMateria(AMateria const &src);
-	~AMateria(void);
+	Character(void);
+	Character(std::string name);
+	Character(Character const &src);
+	~Character(void);
 
-	AMateria	&operator=(AMateria const &rhs);
+	Character	&operator=(Character const &rhs);
 
-	std::string const	&getType(void) const;
-	unsigned int		getXP(void) const;
-
-	virtual AMateria	*clone(void) const = 0;
-	virtual void		use(ICharacter &target);
+	std::string const	&getName(void) const;
+	void				equip(AMateria *m);
+	void				unequip(int idx);
+	void				use(int idx, ICharacter &target);
 
 private:
 
-	unsigned int _xp;
+	AMateria	_inventory[4];
+	std::string	_name;
 };
 
 #endif
