@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 10:53:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/07 11:13:39 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/07 15:51:12 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ public:
 	Ice		*clone(void);
 	void	use(ICharacter &target);
 
-private:
-
-	unsigned int	_xp;
 };
 
 #endif

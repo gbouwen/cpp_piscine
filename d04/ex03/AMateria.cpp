@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 14:18:48 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/07 15:49:03 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/07 15:56:41 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ unsigned int		AMateria::getXP(void) const
 
 void				AMateria::use(ICharacter &target);
 {
-	std::cout << "Used AMateria on " << target.getType() << std::endl;
+	std::cout << "Used AMateria on " << target.getName() << std::endl;
 	this-_xp += 10;
 	return ;
 }
