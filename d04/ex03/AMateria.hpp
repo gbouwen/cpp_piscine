@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 11:17:19 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/07 10:55:34 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/07 14:33:50 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ public:
 
 private:
 
-	unsigned int _xp;
+	std::string		_type;
+	unsigned int	_xp;
 };
 
 #endif
