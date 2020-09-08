@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 11:59:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/04 14:04:30 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/08 13:33:58 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,7 @@ ISpaceMarine	*Squad::getUnit(int n) const
 
 int				Squad::push(ISpaceMarine *newMarine)
 {
-	if (this->_count == this->_maxSize)
-		return (this->_count);
-	if (newMarine == NULL)
+	if (this->_count == this->_maxSize || newMarine == NULL)
 		return (this->_count);
 	for (int i = 0; i < this->_count; i++)
 	{
