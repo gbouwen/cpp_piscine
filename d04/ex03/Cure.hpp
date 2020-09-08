@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 11:07:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/07 11:14:15 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/08 16:44:00 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,10 @@ class Cure : public AMateria
 public:
 
 	Cure(void);
-	Cure(Cure const &src);
 	~Cure(void);
 
-	Cure	&operator=(Cure const &rhs);
-
-	Cure	*clone(void);
+	Cure	*clone(void) const;
 	void	use(ICharacter &target);
-
-private:
-
-	unsigned int	_xp;
 };
 
 #endif

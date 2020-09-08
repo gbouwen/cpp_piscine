@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 10:55:06 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/07 15:57:46 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/08 14:31:48 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ Ice::~Ice(void)
 
 Ice		*Ice::clone(void) const
 {
-
+	Ice	*clone = new Ice(*this);
+	return (clone);
 }
 
 void	Ice::use(ICharacter &target)
