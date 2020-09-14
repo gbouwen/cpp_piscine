@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 10:30:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 12:28:30 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 14:30:38 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,19 @@ void			Bureaucrat::decrementGrade(void)
 	if ((this->_grade + 1) > 150)
 		throw (Bureaucrat::GradeTooLowException("Grade too low"));
 	this->_grade++;
+}
+
+void			Bureaucrat::signForm(Form &form) const
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signs " << form.getName() << std::endl;
+	}
+	catch (std::exception &exception)
+	{
+		std::cout << this->_name << " cannot sign " << form.getName() << " because " << exception.what() << std::endl;
+	}
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(std::string error)
