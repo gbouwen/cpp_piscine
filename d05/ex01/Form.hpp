@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:18:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 14:28:59 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 17:37:36 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,19 @@ public:
 		std::string	_errorMessage;
 	};
 
+	class FormAlreadySignedException : public std::exception
+	{
+
+	public:
+
+		FormAlreadySignedException(std::string error);
+
+		const char	*what(void) const noexcept;
+
+	private:
+
+		std::string	_errorMessage;
+	};
 
 private:
 

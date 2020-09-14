@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 14:19:09 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 14:38:39 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 17:42:35 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(void)
 	bob.signForm(form2);
 	std::cout << form2;
 
+	bob.signForm(form2);
 	try
 	{
 		Form	wrong("wrong", 0, 20);
