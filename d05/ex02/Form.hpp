@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:18:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 14:28:59 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 15:21:10 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ private:
 	bool			_signed;
 	unsigned int	_gradeToSign;
 	unsigned int	_gradeToExecute;
+	std::string		_target;
 };
 
 std::ostream	&operator<<(std::ostream &o, Form const &src);
