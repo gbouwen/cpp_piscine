@@ -64,6 +64,7 @@ public:
 private:
 
 	Bureaucrat(void);
+
 	std::string		_name;
 	unsigned int	_grade;
 
