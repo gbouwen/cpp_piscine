@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 10:30:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 14:30:38 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 18:19:33 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,19 @@ void			Bureaucrat::signForm(Form &form) const
 	catch (std::exception &exception)
 	{
 		std::cout << this->_name << " cannot sign " << form.getName() << " because " << exception.what() << std::endl;
+	}
+}
+
+void			Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executes " << form.getName() << std::endl;
+	}
+	catch (std::exception &exception)
+	{
+		std::cout << "Error: " << exception.what() << std::endl;
 	}
 }
 

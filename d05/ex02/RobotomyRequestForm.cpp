@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 15:27:19 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 15:28:43 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 17:59:54 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,9 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 	this->_rankToSign = 72;
 	this->_rankToExecute = 45;
 	this->_target = target;
+}
+
+void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
+{
+	Form::execute(executor);
 }

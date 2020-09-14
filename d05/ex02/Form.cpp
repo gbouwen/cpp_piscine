@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:36:47 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 14:29:32 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 18:05:23 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,18 @@ void			Form::beSigned(Bureaucrat const &src)
 {
 	if (src.getGrade() > this->_gradeToSign)
 		throw (Form::GradeTooLowException("Grade too low"));
+	if (this->_signed)
+		throw (Form::FormAlreadySignedException("Form already signed"));
 	this->_signed = true;
 	return ;
+}
+
+void			Form::execute(Bureaucrat const &executor) const
+{
+	if (!this->_signed)
+		throw (Form::FormAlreadySignedException("Form already signed");
+	if (executor.getGradeToExecute() > this->_gradeToExecute)
+		throw (Form::GradeTooLowException("Grade too low");
 }
 
 Form::GradeTooHighException::GradeTooHighException(std::string error)
@@ -97,6 +107,17 @@ Form::GradeTooLowException::GradeTooLowException(std::string error)
 }
 
 const char	*Form::GradeTooLowException::what(void) const noexcept
+{
+	return (this->_errorMessage.c_str());
+}
+
+Form::FormAlreadySignedException::FormAlreadySignedException(std::string error)
+{
+	this->_errorMessage = error;
+	return ;
+}
+
+const char	*Form::FormAlreadySignedException::what(void) const noexcept
 {
 	return (this->_errorMessage.c_str());
 }

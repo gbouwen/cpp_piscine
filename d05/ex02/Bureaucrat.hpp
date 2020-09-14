@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 10:19:19 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 14:30:34 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 18:12:41 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
 	void			incrementGrade(void);
 	void			decrementGrade(void);
 	void			signForm(Form &form) const;
+	void			executeForm(Form const &form);
 
 	class GradeTooHighException : public std::exception
 	{

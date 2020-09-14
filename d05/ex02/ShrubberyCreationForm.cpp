@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 15:21:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 15:24:19 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 18:00:20 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 	this->_gradeToSign = 145;
 	this->_gradeToExecute = 137;
 	this->_target = target;
+}
+
+void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+{
+	Form::execute(executor);
 }

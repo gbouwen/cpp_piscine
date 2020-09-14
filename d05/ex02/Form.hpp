@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:18:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 15:21:10 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/14 17:58:00 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
 	unsigned int	getGradeToExecute(void) const;
 
 	void			beSigned(Bureaucrat	const &src);
+	void			execute(Bureaucrat const &executor) const;
 
 	class GradeTooHighException : public std::exception
 	{
@@ -65,6 +66,19 @@ public:
 		std::string	_errorMessage;
 	};
 
+	class FormAlreadySignedException : public std::exception
+	{
+
+	public:
+
+		FormAlreadySignedException(std::string error);
+
+		const char	*what(void) const noexcept;
+
+	private:
+
+		std::string	_errorMessage;
+	};
 
 private:
 
@@ -74,7 +88,6 @@ private:
 	bool			_signed;
 	unsigned int	_gradeToSign;
 	unsigned int	_gradeToExecute;
-	std::string		_target;
 };
 
 std::ostream	&operator<<(std::ostream &o, Form const &src);
