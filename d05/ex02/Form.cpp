@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:36:47 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 18:05:23 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/15 11:35:45 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Form::Form(void)
 	return ;
 }
 
-Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute) : _signed(false)
+Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, std::string target) : _signed(false)
 {
 	this->_name = name;
 	if (gradeToSign < 1 || gradeToExecute < 1)
@@ -26,6 +26,7 @@ Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecu
 		throw (Form::GradeTooLowException("Grade too low"));
 	this->_gradeToSign = gradeToSign;
 	this->_gradeToExecute = gradeToExecute;
+	this->_target = target;
 }
 
 Form::Form(Form const &src)
@@ -71,9 +72,14 @@ unsigned int	Form::getGradeToExecute(void) const
 	return (this->_gradeToExecute);
 }
 
+std::string		Form::getTarget(void) const
+{
+	return (this->_target);
+}
+
 void			Form::beSigned(Bureaucrat const &src)
 {
-	if (src.getGrade() > this->_gradeToSign)
+	if (this->_gradeToSign < src.getGrade())
 		throw (Form::GradeTooLowException("Grade too low"));
 	if (this->_signed)
 		throw (Form::FormAlreadySignedException("Form already signed"));
@@ -84,9 +90,9 @@ void			Form::beSigned(Bureaucrat const &src)
 void			Form::execute(Bureaucrat const &executor) const
 {
 	if (!this->_signed)
-		throw (Form::FormAlreadySignedException("Form already signed");
-	if (executor.getGradeToExecute() > this->_gradeToExecute)
-		throw (Form::GradeTooLowException("Grade too low");
+		throw (Form::FormNotSignedException("Form not signed"));
+	if (executor.getGrade() > this->_gradeToExecute)
+		throw (Form::GradeTooLowException("Grade too low"));
 }
 
 Form::GradeTooHighException::GradeTooHighException(std::string error)
@@ -118,6 +124,17 @@ Form::FormAlreadySignedException::FormAlreadySignedException(std::string error)
 }
 
 const char	*Form::FormAlreadySignedException::what(void) const noexcept
+{
+	return (this->_errorMessage.c_str());
+}
+
+Form::FormNotSignedException::FormNotSignedException(std::string error)
+{
+	this->_errorMessage = error;
+	return ;
+}
+
+const char	*Form::FormNotSignedException::what(void) const noexcept
 {
 	return (this->_errorMessage.c_str());
 }

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:18:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 17:58:00 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/15 11:19:22 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	Form
 
 public:
 
-	Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute);
+	Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, std::string target);
 	Form(Form const &src);
 	~Form(void);
 
@@ -34,6 +34,7 @@ public:
 	bool			getSigned(void) const;
 	unsigned int	getGradeToSign(void) const;
 	unsigned int	getGradeToExecute(void) const;
+	std::string		getTarget(void) const;
 
 	void			beSigned(Bureaucrat	const &src);
 	void			execute(Bureaucrat const &executor) const;
@@ -80,6 +81,20 @@ public:
 		std::string	_errorMessage;
 	};
 
+	class FormNotSignedException : public std::exception
+	{
+
+	public:
+
+		FormNotSignedException(std::string error);
+
+		const char	*what(void) const noexcept;
+
+	private:
+
+		std::string	_errorMessage;
+	};
+
 private:
 
 	Form(void);
@@ -88,6 +103,7 @@ private:
 	bool			_signed;
 	unsigned int	_gradeToSign;
 	unsigned int	_gradeToExecute;
+	std::string		_target;
 };
 
 std::ostream	&operator<<(std::ostream &o, Form const &src);

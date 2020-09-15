@@ -6,22 +6,26 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 15:27:19 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 17:59:54 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/15 11:10:53 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestform.hpp"
+#include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("Robotomy request form", 72, 45, target)
 {
-	this->_name = "Robotomy request form";
-	this->_signed = false;
-	this->_rankToSign = 72;
-	this->_rankToExecute = 45;
-	this->_target = target;
+	return ;
 }
 
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
+	int	randomNumber;
+
 	Form::execute(executor);
+	randomNumber = rand() % 2;
+	std::cout << "BZZZZZ... BZZZZZ... BZZZZZ..." << std::endl;
+	if (randomNumber == 1)
+		std::cout << this->getTarget() << " has been robotomized." << std::endl;
+	else
+		std::cout << "Failed to robotomize " << this->getTarget() << std::endl;
 }
