@@ -13,7 +13,7 @@
 NAME = convert
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCE_CPP = main.cpp Convertor.cpp
+SOURCE_CPP = main.cpp convertor.cpp
 OBJECT_FILES = $(SOURCE_CPP:.cpp=.o)
 
 GREEN = \033[0;38;5;114m
