@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Conversion.cpp                                     :+:    :+:            */
+/*   Convertor.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 14:54:20 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/16 15:26:20 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 11:05:39 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conversion.hpp"
+#include "Convertor.hpp"
 
-Conversion::Conversion(void) : _charResult(0), _intResult(0), _floatResult(0), _doubleResult(0), _type(NULL)
+Convertor::Convertor(void) : _charResult(0), _intResult(0), _floatResult(0), _doubleResult(0), _type("default")
 {
 	return ;
 }
 
-Conversion::Conversion(Conversion const &src)
+Convertor::Convertor(Convertor const &src)
 {
 	*this = src;
 	return ;
 }
 
-Conversion::~Conversion(void)
+Convertor::~Convertor(void)
 {
 	return ;
 }
 
-Conversion	&Conversion::operator=(Conversion const &rhs)
+Convertor	&Convertor::operator=(Convertor const &rhs)
 {
 	if (this != &rhs)
 	{
@@ -41,26 +41,33 @@ Conversion	&Conversion::operator=(Conversion const &rhs)
 	return (*this);
 }
 
-void	Conversion::acquire(void)
+void	Convertor::acquire(std::string input)
 {
-
+	if (input.length() == 1)
+	{
+		if (isdigit(input[0]))
+			this->_intResult = atoi(input.c_str());
+		else if (input[0] >= 30 && input[0] <= 126)
+			this->_charResult = input[0];
+	}
+	return ;
 }
 
-void	Conversion::convert(void)
+void	Convertor::convert(void)
 {
-
+	return ;
 }
 
-void	Conversion::printResults(void) const
+void	Convertor::printResults(void) const
 {
 	std::cout << "char: ";
 	// if (conversion makes sense)
-		// std::cout << this->_charResult << std::endl;
+		std::cout << this->_charResult << std::endl;
 	// else
 		// std::cout << "impossible" << std::endl;
 	std::cout << "int: ";
 	// if (conversion makes sense)
-		// std::cout << this->_intResult << std::endl;
+		std::cout << this->_intResult << std::endl;
 	// else
 		// std::cout << "impossible" << std::endl;
 	std::cout << "float: ";

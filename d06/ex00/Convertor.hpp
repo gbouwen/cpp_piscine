@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Conversion.hpp                                     :+:    :+:            */
+/*   Convertor.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 14:44:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/16 15:26:44 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 11:01:28 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERSION_HPP
-# define CONVERSION_HPP
+#ifndef CONVERTOR_HPP
+# define CONVERTOR_HPP
 
 # include <iostream>
+# include <string>
+# include <cctype>
+# include <cstdlib>
 
-class Conversion
+class Convertor
 {
 
 public:
 
-	Conversion(void);
-	Conversion(Conversion const &src);
-	~Conversion(void);
+	Convertor(void);
+	Convertor(Convertor const &src);
+	~Convertor(void);
 
-	Conversion	&operator(Conversion const &rhs);
+	Convertor	&operator=(Convertor const &rhs);
 
-	void	acquire(void);
+	void	acquire(std::string input);
 	void	convert(void);
 	void	printResults(void) const;
 

@@ -6,26 +6,23 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 11:16:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/16 15:26:42 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 11:03:47 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Convertor.hpp"
 
 int	main(int ac, char **av)
 {
+	Convertor	conv;
+
 	if (ac != 2)
 	{
 		std::cout << "Need one argument for this program to work" << std::endl;
 		return (-1);
 	}
-	double	a;
-	int		b;
-
-	a = 2000000000;
-	b = 2000000000;
-	std::cout << "a: " << a << " b: " << b << std::endl;
-	std::cout << av[1] << std::endl;
+	conv.acquire(av[1]);
+	conv.printResults();
 	return (0);
 }
 
