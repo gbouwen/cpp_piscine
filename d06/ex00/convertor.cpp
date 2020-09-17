@@ -6,13 +6,13 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:57:51 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 16:49:27 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 16:58:35 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "convertor.hpp"
 
- bool	detectChar(std::string input)
+bool	detectChar(std::string input)
 {
 	if (input.length() == 1)
 	{
@@ -24,7 +24,7 @@
 	return (false);
 }
 
- bool	detectInt(std::string input)
+bool	detectInt(std::string input)
 {
 	long	converted;
 	char	*p;
@@ -37,7 +37,7 @@
 	return (true);
 }
 
- bool	detectFloat(std::string input)
+bool	detectFloat(std::string input)
 {
 	if (input == "nanf")
 		return (true);
@@ -46,11 +46,15 @@
 	else if (input == "+inff")
 		return (true);
 	else if (input[input.length() - 1] == 'f')
-		return (true);
+	{
+		float res = static_cast<float>(atof(input.c_str()));
+		if (res != 0)
+			return (true);
+	}
 	return (false);
 }
 
- bool	detectDouble(std::string input)
+bool	detectDouble(std::string input)
 {
 	if (input == "nan")
 		return (true);
@@ -60,8 +64,9 @@
 		return (true);
 	else if (input[input.length() - 1] != 'f')
 	{
-		int	ret = input.find(".");
-		if (ret != -1)
+		int	found = input.find(".");
+		double res = atof(input.c_str());
+		if (res != 0 && found != -1)
 			return (true);
 	}
 	return (false);
@@ -81,6 +86,7 @@ int		detectType(std::string input)
 	if (detected)
 		return (3);
 	detected = detectDouble(input);
+	if (detected)
 		return (4);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 11:16:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 16:48:04 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 16:55:53 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int ac, char **av)
 	try
 	{
 		type = detectType(av[1]);
+		if (type == 0)
+			std::cout << "error" << std::endl;
 		if (type == 1)
 			std::cout << "char" << std::endl;
 		if (type == 2)
