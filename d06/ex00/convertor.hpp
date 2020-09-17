@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:59:24 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 13:57:38 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 14:20:13 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string>
 # include <iostream>
 # include <cctype>
+# include <limits>
+# include <cstdlib>
 
 char	detectChar(std::string input);
 int		detectInt(std::string input);
