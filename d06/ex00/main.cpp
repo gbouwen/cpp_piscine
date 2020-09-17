@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 11:16:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 16:55:53 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 16:56:05 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	main(int ac, char **av)
 		if (type == 2)
 			std::cout << "int" << std::endl;
 		if (type == 3)
-			std::cout << "float" << std::endl;
-		if (type == 4)
 			std::cout << "double" << std::endl;
+		if (type == 4)
+			std::cout << "float" << std::endl;
    		/*castTypes(&charResult, &intResult, &floatResult, &doubleResult);*/
 		/*printEverything(charResult, intResult, floatResult, doubleResult);*/
 	}

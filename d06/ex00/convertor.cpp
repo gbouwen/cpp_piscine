@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:57:51 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 16:58:35 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 17:03:22 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,6 @@ bool	detectInt(std::string input)
 	return (true);
 }
 
-bool	detectFloat(std::string input)
-{
-	if (input == "nanf")
-		return (true);
-	else if (input == "-inff")
-		return (true);
-	else if (input == "+inff")
-		return (true);
-	else if (input[input.length() - 1] == 'f')
-	{
-		float res = static_cast<float>(atof(input.c_str()));
-		if (res != 0)
-			return (true);
-	}
-	return (false);
-}
-
 bool	detectDouble(std::string input)
 {
 	if (input == "nan")
@@ -72,6 +55,25 @@ bool	detectDouble(std::string input)
 	return (false);
 }
 
+bool	detectFloat(std::string input)
+{
+	if (input == "nanf")
+		return (true);
+	else if (input == "-inff")
+		return (true);
+	else if (input == "+inff")
+		return (true);
+	else if (input[input.length() - 1] == 'f')
+	{
+		float res = static_cast<float>(atof(input.c_str()));
+		if (res == std::numeric_limits<float>::infinity())
+			return (false);
+		if (res != 0)
+			return (true);
+	}
+	return (false);
+}
+
 int		detectType(std::string input)
 {
 	bool detected;
@@ -82,10 +84,10 @@ int		detectType(std::string input)
 	detected = detectInt(input);
 	if (detected)
 		return (2);
-	detected = detectFloat(input);
+	detected = detectDouble(input);
 	if (detected)
 		return (3);
-	detected = detectDouble(input);
+	detected = detectFloat(input);
 	if (detected)
 		return (4);
 	return (0);
