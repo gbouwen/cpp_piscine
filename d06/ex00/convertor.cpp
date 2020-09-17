@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:57:51 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 14:19:40 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 14:41:36 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,15 @@ int		detectInt(std::string input)
 	if (converted > std::numeric_limits<int>::max() || converted < std::numeric_limits<int>::min())
 		throw (-1);
 	return (static_cast<int>(converted));
+}
+
+float	detectFloat(std::string input)
+{
+	if (input == "nanf")
+		return (std::numeric_limits<float>::quiet_NaN());
+	if (input == "-inff")
+		return (-std::numeric_limits<float>::infinity());
+	if (input == "+inff")
+		return (std::numeric_limits<float>::infinity());
+	return (0);
 }
