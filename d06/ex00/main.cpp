@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 11:16:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 13:33:32 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 13:53:05 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,19 @@ int	main(int ac, char **av)
 		std::cout << "Need one argument for this program to work" << std::endl;
 		return (-1);
 	}
-	charResult = detectChar(av[1]);
-   /* intResult = detectInt(av[1]);*/
-	//floatResult = detectFloat(av[1]);
-	//doubleResult = detectDouble(av[1]);
-	//castTypes(&charResult, &intResult, &floatResult, &doubleResult);
-	/*printEverything(charResult, intResult, floatResult, doubleResult);*/
+	try
+	{
+		detectChar(av[1], &charResult);
+  	 /* intResult = detectInt(av[1]);*/
+		//floatResult = detectFloat(av[1]);
+		//doubleResult = detectDouble(av[1]);
+		//castTypes(&charResult, &intResult, &floatResult, &doubleResult);
+		/*printEverything(charResult, intResult, floatResult, doubleResult);*/
+	}
+	catch (int error)
+	{
+		std::cout << "Something went wrong" << std::endl;
+	}
 	std::cout << "char: " << charResult << std::endl;
 	return (0);
 }
