@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 11:16:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 13:53:05 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 13:58:29 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	}
 	try
 	{
-		detectChar(av[1], &charResult);
+		charResult = detectChar(av[1]);
   	 /* intResult = detectInt(av[1]);*/
 		//floatResult = detectFloat(av[1]);
 		//doubleResult = detectDouble(av[1]);
