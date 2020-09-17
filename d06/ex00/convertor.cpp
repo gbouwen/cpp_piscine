@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:57:51 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 14:41:36 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 14:58:37 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ float	detectFloat(std::string input)
 		return (-std::numeric_limits<float>::infinity());
 	if (input == "+inff")
 		return (std::numeric_limits<float>::infinity());
+	if (input[input.length() - 1] == 'f')
+		return (atof(input.c_str()));
 	return (0);
 }
