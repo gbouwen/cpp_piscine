@@ -6,13 +6,13 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:57:51 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 17:03:22 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 17:05:57 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "convertor.hpp"
 
-bool	detectChar(std::string input)
+static bool	detectChar(std::string input)
 {
 	if (input.length() == 1)
 	{
@@ -24,7 +24,7 @@ bool	detectChar(std::string input)
 	return (false);
 }
 
-bool	detectInt(std::string input)
+static bool	detectInt(std::string input)
 {
 	long	converted;
 	char	*p;
@@ -37,7 +37,7 @@ bool	detectInt(std::string input)
 	return (true);
 }
 
-bool	detectDouble(std::string input)
+static bool	detectDouble(std::string input)
 {
 	if (input == "nan")
 		return (true);
@@ -55,7 +55,7 @@ bool	detectDouble(std::string input)
 	return (false);
 }
 
-bool	detectFloat(std::string input)
+static bool	detectFloat(std::string input)
 {
 	if (input == "nanf")
 		return (true);
