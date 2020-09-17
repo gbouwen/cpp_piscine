@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:57:51 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 17:05:57 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 17:20:25 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,15 @@ int		detectType(std::string input)
 
 	detected = detectChar(input);
 	if (detected)
-		return (1);
+		return (CHAR);
 	detected = detectInt(input);
 	if (detected)
-		return (2);
+		return (INT);
 	detected = detectDouble(input);
 	if (detected)
-		return (3);
+		return (DOUBLE);
 	detected = detectFloat(input);
 	if (detected)
-		return (4);
+		return (FLOAT);
 	return (0);
 }
