@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 11:16:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 14:32:30 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 15:04:15 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av)
 	char	charResult;
 	int		intResult;
 	float	floatResult;
-	/*double	doubleResult;*/
+	double	doubleResult;
 
 	if (ac != 2)
 	{
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 		charResult = detectChar(av[1]);
 		intResult = detectInt(av[1]);
 		floatResult = detectFloat(av[1]);
-		//doubleResult = detectDouble(av[1]);
+		doubleResult = detectDouble(av[1]);
 		//castTypes(&charResult, &intResult, &floatResult, &doubleResult);
 		/*printEverything(charResult, intResult, floatResult, doubleResult);*/
 	}
@@ -40,6 +40,7 @@ int	main(int ac, char **av)
 	std::cout << "char: " << charResult << std::endl;
 	std::cout << "int: " << intResult << std::endl;
 	std::cout << "float: " << floatResult << std::endl;
+	std::cout << "double: " << doubleResult << std::endl;
 	return (0);
 }
 

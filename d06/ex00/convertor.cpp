@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:57:51 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 14:58:37 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 15:18:59 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,28 @@ float	detectFloat(std::string input)
 {
 	if (input == "nanf")
 		return (std::numeric_limits<float>::quiet_NaN());
-	if (input == "-inff")
+	else if (input == "-inff")
 		return (-std::numeric_limits<float>::infinity());
-	if (input == "+inff")
+	else if (input == "+inff")
 		return (std::numeric_limits<float>::infinity());
-	if (input[input.length() - 1] == 'f')
-		return (atof(input.c_str()));
+	else if (input[input.length() - 1] == 'f')
+		return (static_cast<float>(atof(input.c_str())));
+	return (0);
+}
+
+double	detectDouble(std::string input)
+{
+	if (input == "nan")
+		return (std::numeric_limits<double>::quiet_NaN());
+	else if (input == "-inf")
+		return (-std::numeric_limits<double>::infinity());
+	else if (input == "+inf")
+		return (std::numeric_limits<float>::infinity());
+	else if (input[input.length() - 1] != 'f')
+	{
+		int	ret = input.find(".");
+		if (ret != -1)
+			return (atof(input.c_str()));
+	}
 	return (0);
 }
