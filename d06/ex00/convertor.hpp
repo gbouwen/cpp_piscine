@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:59:24 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 14:40:10 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 16:42:45 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 # include <limits>
 # include <cstdlib>
 
-char	detectChar(std::string input);
-int		detectInt(std::string input);
-float	detectFloat(std::string input);
-double	detectDouble(std::string input);
+bool	detectChar(std::string input);
+bool	detectInt(std::string input);
+bool	detectFloat(std::string input);
+bool	detectDouble(std::string input);
+int		detectType(std::string input);
 
 void	castTypes(char *charResult, int *intResult, float *floatResult, double *doubleResult);
 void	printEverything(char charResult, int intResult, float floatResult, double doubleResult);

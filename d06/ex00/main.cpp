@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 11:16:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 15:04:15 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 16:48:04 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 int	main(int ac, char **av)
 {
-	char	charResult;
-	int		intResult;
-	float	floatResult;
-	double	doubleResult;
+   /* char	charResult;*/
+	//int		intResult;
+	//float	floatResult;
+	/*double	doubleResult;*/
+	int		type;
 
 	if (ac != 2)
 	{
@@ -26,26 +27,29 @@ int	main(int ac, char **av)
 	}
 	try
 	{
-		charResult = detectChar(av[1]);
-		intResult = detectInt(av[1]);
-		floatResult = detectFloat(av[1]);
-		doubleResult = detectDouble(av[1]);
-		//castTypes(&charResult, &intResult, &floatResult, &doubleResult);
+		type = detectType(av[1]);
+		if (type == 1)
+			std::cout << "char" << std::endl;
+		if (type == 2)
+			std::cout << "int" << std::endl;
+		if (type == 3)
+			std::cout << "float" << std::endl;
+		if (type == 4)
+			std::cout << "double" << std::endl;
+   		/*castTypes(&charResult, &intResult, &floatResult, &doubleResult);*/
 		/*printEverything(charResult, intResult, floatResult, doubleResult);*/
 	}
 	catch (int error)
 	{
 		std::cout << "Something went wrong" << std::endl;
 	}
-	std::cout << "char: " << charResult << std::endl;
-	std::cout << "int: " << intResult << std::endl;
-	std::cout << "float: " << floatResult << std::endl;
-	std::cout << "double: " << doubleResult << std::endl;
+   /* std::cout << "char: " << charResult << std::endl;*/
+	//std::cout << "int: " << intResult << std::endl;
+	//std::cout << "float: " << floatResult << std::endl;
+	/*std::cout << "double: " << doubleResult << std::endl;*/
 	return (0);
 }
 
-// haal getal uit string
-// check welk datatype het is
-// acquire -> zorgt ervoor dat het op de goede manier gecast wordt naar de 'echte' value
+// casten -> wat is de originele type? hoe check je welke variable is ge-set?
 // convert -> cast het op de juiste manier, moet ook error checks uitvoeren
 // printResult -> print het op de juiste manier

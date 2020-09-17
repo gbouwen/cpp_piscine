@@ -6,63 +6,81 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:57:51 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 15:18:59 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 16:49:27 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "convertor.hpp"
 
-char	detectChar(std::string input)
+ bool	detectChar(std::string input)
 {
 	if (input.length() == 1)
 	{
 		if (isprint(input[0]) && !isdigit(input[0]))
-			return (input[0]);
+			return (true);
 		if (!isprint(input[0]))
-			throw (-1);
+			return (false);
 	}
-	return (0);
+	return (false);
 }
 
-int		detectInt(std::string input)
+ bool	detectInt(std::string input)
 {
 	long	converted;
 	char	*p;
 
 	converted = strtol(input.c_str(), &p, 10);
 	if (*p)
-		return (0);
+		return (false);
 	if (converted > std::numeric_limits<int>::max() || converted < std::numeric_limits<int>::min())
-		throw (-1);
-	return (static_cast<int>(converted));
+		return (false);
+	return (true);
 }
 
-float	detectFloat(std::string input)
+ bool	detectFloat(std::string input)
 {
 	if (input == "nanf")
-		return (std::numeric_limits<float>::quiet_NaN());
+		return (true);
 	else if (input == "-inff")
-		return (-std::numeric_limits<float>::infinity());
+		return (true);
 	else if (input == "+inff")
-		return (std::numeric_limits<float>::infinity());
+		return (true);
 	else if (input[input.length() - 1] == 'f')
-		return (static_cast<float>(atof(input.c_str())));
-	return (0);
+		return (true);
+	return (false);
 }
 
-double	detectDouble(std::string input)
+ bool	detectDouble(std::string input)
 {
 	if (input == "nan")
-		return (std::numeric_limits<double>::quiet_NaN());
+		return (true);
 	else if (input == "-inf")
-		return (-std::numeric_limits<double>::infinity());
+		return (true);
 	else if (input == "+inf")
-		return (std::numeric_limits<float>::infinity());
+		return (true);
 	else if (input[input.length() - 1] != 'f')
 	{
 		int	ret = input.find(".");
 		if (ret != -1)
-			return (atof(input.c_str()));
+			return (true);
 	}
+	return (false);
+}
+
+int		detectType(std::string input)
+{
+	bool detected;
+
+	detected = detectChar(input);
+	if (detected)
+		return (1);
+	detected = detectInt(input);
+	if (detected)
+		return (2);
+	detected = detectFloat(input);
+	if (detected)
+		return (3);
+	detected = detectDouble(input);
+		return (4);
 	return (0);
 }
