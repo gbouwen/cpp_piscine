@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:59:24 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 17:36:26 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/18 11:02:04 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <cctype>
 # include <limits>
 # include <cstdlib>
+# include <iomanip>
 
 typedef struct	s_data
 {
@@ -30,7 +31,7 @@ typedef struct	s_data
 int		detectType(std::string input);
 void	setType(std::string input, int type, t_data *data);
 void	castTypes(int type, t_data *data);
-void	printEverything(t_data data);
+void	printEverything(int type, t_data data);
 
 # define CHAR	1
 # define INT 	2

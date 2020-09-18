@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/16 11:16:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 17:45:33 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/17 17:50:08 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ int	main(int ac, char **av)
 	}
 	setType(av[1], type, &data);
 	castTypes(type, &data);
-	printEverything(data);
+	printEverything(type, data);
 	return (0);
 }

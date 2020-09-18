@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 17:45:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/17 17:56:43 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/18 11:21:25 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,29 @@ static void	printInt(t_data data)
 	return ;
 }
 
-static void	printFloat(t_data data)
+static void	printFloat(int type, t_data data)
 {
-	std::cout << "float: " << data.floatResult << "f" << std::endl;
+	if (type == CHAR || type == INT)
+		std::cout << "float: " << std::fixed << std::setprecision(1) << data.floatResult << "f" << std::endl;
+	else
+		std::cout << "float: " << data.floatResult << "f" << std::endl;
 	return ;
 }
 
-static void	printDouble(t_data data)
+static void	printDouble(int type, t_data data)
 {
-	std::cout << "double: " << data.doubleResult << std::endl;
+	if (type == CHAR || type == INT)
+		std::cout << "double: " << std::fixed << std::setprecision(1) << data.doubleResult << std::endl;
+	else
+		std::cout << "double: " << data.doubleResult << std::endl;
 	return ;
 }
 
-void	printEverything(t_data data)
+void	printEverything(int type, t_data data)
 {
 	printChar(data);
 	printInt(data);
-	printFloat(data);
-	printDouble(data);
+	printFloat(type, data);
+	printDouble(type, data);
 	return ;
 }
