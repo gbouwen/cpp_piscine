@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 17:45:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/18 11:21:25 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/18 11:51:05 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	printInt(t_data data)
 
 static void	printFloat(int type, t_data data)
 {
-	if (type == CHAR || type == INT)
+	if (type == CHAR || type == INT || data.floatResult == static_cast<int>(data.floatResult))
 		std::cout << "float: " << std::fixed << std::setprecision(1) << data.floatResult << "f" << std::endl;
 	else
 		std::cout << "float: " << data.floatResult << "f" << std::endl;
@@ -41,7 +41,7 @@ static void	printFloat(int type, t_data data)
 
 static void	printDouble(int type, t_data data)
 {
-	if (type == CHAR || type == INT)
+	if (type == CHAR || type == INT || data.doubleResult == static_cast<int>(data.doubleResult))
 		std::cout << "double: " << std::fixed << std::setprecision(1) << data.doubleResult << std::endl;
 	else
 		std::cout << "double: " << data.doubleResult << std::endl;
