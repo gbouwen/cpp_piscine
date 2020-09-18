@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 17:45:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/18 11:51:05 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/18 13:58:56 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 static void	printChar(t_data data)
 {
 	std::cout << "char: ";
-	if (!isprint(data.charResult))
-		std::cout << "Non displayable" << std::endl;
-	else if (data.charResult > 126)
+	if (data.charResult > 126 || data.charResult < 0)
 		std::cout << "impossible" << std::endl;
+	else if (!isprint(data.charResult))
+		std::cout << "Non displayable" << std::endl;
 	else
 		std::cout << "'" << data.charResult << "'" << std::endl;
 	return ;
@@ -26,7 +26,10 @@ static void	printChar(t_data data)
 
 static void	printInt(t_data data)
 {
-	std::cout << "int: " << data.intResult << std::endl;
+	if (data.intResult != data.doubleResult)
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << data.intResult << std::endl;
 	return ;
 }
 

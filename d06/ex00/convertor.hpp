@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 11:59:24 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/18 11:41:36 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/18 11:43:49 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <limits>
 # include <cstdlib>
 # include <iomanip>
+# include <cmath>
 
 typedef struct	s_data
 {
