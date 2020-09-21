@@ -6,34 +6,36 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/29 09:29:33 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/18 14:40:08 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/21 12:09:10 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.class.hpp"
 
-void	searchAllContacts(Contact contacts[], int index)
+void	searchAllContacts(Contact contacts[], int contacts_added)
 {
+	int			current_index;
 	std::string	command;
 	int			input_index;
 
-	for (int i = 0; i < index; i++)
-		contacts[i].searchContactShort();
-	if (index == 0)
+	current_index = contacts_added - 1;
+	if (contacts_added == 0)
 	{
 		std::cout << "Phonebook is empty, add a contact!" << std::endl;
 		return ;
 	}
+	for (int i = 0; i < contacts_added; i++)
+		contacts[i].searchContactShort();
 	do
 	{
 		std::cout << "You can search for a specific entry." << std::endl;
-		std::cout << "Search an index in range [1 - " << index << "]." << std::endl;
+		std::cout << "Search an index in range [0 - " << current_index << "]." << std::endl;
 		std::cout << "Or use the BACK command to go back." << std::endl;
 		std::cout << "> ";
 		getline(std::cin, command);
 		input_index = std::atoi(command.c_str());
-		if (input_index >= 1 && input_index <= index && command.length() == 1)
-			contacts[input_index - 1].searchContactFull();
+		if ((input_index >= 0 && input_index <= current_index) && (command.length() == 1 && isdigit(command[0])))
+			contacts[input_index].searchContactFull();
 		else if (command.compare("BACK") != 0)
 			std::cout << "INVALID INPUT." << std::endl;
 	}
@@ -78,7 +80,7 @@ int		main(void)
 		}
 		if (command.compare("ADD") == 0)
 		{
-			contacts[index].addContact(index + 1);
+			contacts[index].addContact(index);
 			index++;
 		}
 		if (command.compare("SEARCH") == 0)
