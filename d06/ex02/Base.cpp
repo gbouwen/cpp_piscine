@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   C.hpp                                              :+:    :+:            */
+/*   Base.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/21 17:29:49 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/21 17:40:14 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/21 17:42:06 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/09/21 17:42:23 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_HPP
-# define C_HPP
+#include "Base.hpp"
 
-# include "Base.hpp"
-
-class C : public Base
+Base::~Base(void)
 {
-
-};
-
-#endif
+	return ;
+}
