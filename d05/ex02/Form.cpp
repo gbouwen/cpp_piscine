@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:36:47 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 14:35:12 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 14:47:53 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,7 @@ Form::FormNotSignedException::~FormNotSignedException(void) throw()
 {
 	return ;
 }
+
 std::ostream	&operator<<(std::ostream &o, Form const &src)
 {
 	std::cout << src.getName();
