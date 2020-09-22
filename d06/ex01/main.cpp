@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 14:26:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 17:35:15 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 17:55:18 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,29 @@ Data	*deserialize(void *raw)
 	return (data);
 }
 
+void	checkAllocatedBytes(void *raw)
+{
+	char	*temp = reinterpret_cast<char *>(raw);
+
+	temp = reinterpret_cast<char *>(raw);
+	int size = 0;
+	for (int i = 0; temp[i]; i++)
+		size += sizeof(temp[i]);
+	std::cout << "Allocated " << size << " bytes on memory address: " << &temp << std::endl;
+	return ;
+}
+
 int	main(void)
 {
 	srand(time(NULL));
 	void *raw = serialize();
+	checkAllocatedBytes(raw);
 	Data *data = deserialize(raw);
 
 	std::cout << "data->s1: " << data->s1 << std::endl;
 	std::cout << "data->n: " << data->n << std::endl;
 	std::cout << "data->s2: " << data->s2 << std::endl;
-
-	char	*temp = new char[20];
-	temp = reinterpret_cast<char *>(raw);
-	int size = 0;
-	for (int i = 0; temp[i]; i++)
-		size += sizeof(temp[i]);
-	std::cout << size << std::endl;
 	delete (data);
+	delete (reinterpret_cast<char *>(raw));
 	return (0);
 }
