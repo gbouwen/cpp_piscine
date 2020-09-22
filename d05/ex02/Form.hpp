@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:18:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/15 11:19:22 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 13:53:38 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ public:
 
 		GradeTooHighException(std::string error);
 
-		const char	*what(void) const noexcept;
+		const char	*what(void) const throw();
+		~GradeTooHighException(void) throw();
 
 	private:
 
@@ -60,7 +61,8 @@ public:
 
 		GradeTooLowException(std::string error);
 
-		const char	*what(void) const noexcept;
+		const char	*what(void) const throw();
+		~GradeTooLowException(void) throw();
 
 	private:
 
@@ -74,7 +76,8 @@ public:
 
 		FormAlreadySignedException(std::string error);
 
-		const char	*what(void) const noexcept;
+		const char	*what(void) const throw();
+		~FormAlreadySignedException(void) throw();
 
 	private:
 
@@ -88,7 +91,8 @@ public:
 
 		FormNotSignedException(std::string error);
 
-		const char	*what(void) const noexcept;
+		const char	*what(void) const throw();
+		~FormNotSignedException(void) throw();
 
 	private:
 

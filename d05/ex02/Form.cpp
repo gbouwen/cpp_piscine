@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:36:47 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/15 11:35:45 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 14:35:12 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,14 @@ Form::GradeTooHighException::GradeTooHighException(std::string error)
 	return ;
 }
 
-const char	*Form::GradeTooHighException::what(void) const noexcept
+const char	*Form::GradeTooHighException::what(void) const throw()
 {
 	return (this->_errorMessage.c_str());
+}
+
+Form::GradeTooHighException::~GradeTooHighException(void) throw()
+{
+	return ;
 }
 
 Form::GradeTooLowException::GradeTooLowException(std::string error)
@@ -112,9 +117,14 @@ Form::GradeTooLowException::GradeTooLowException(std::string error)
 	return ;
 }
 
-const char	*Form::GradeTooLowException::what(void) const noexcept
+const char	*Form::GradeTooLowException::what(void) const throw()
 {
 	return (this->_errorMessage.c_str());
+}
+
+Form::GradeTooLowException::~GradeTooLowException(void) throw()
+{
+	return ;
 }
 
 Form::FormAlreadySignedException::FormAlreadySignedException(std::string error)
@@ -123,9 +133,14 @@ Form::FormAlreadySignedException::FormAlreadySignedException(std::string error)
 	return ;
 }
 
-const char	*Form::FormAlreadySignedException::what(void) const noexcept
+const char	*Form::FormAlreadySignedException::what(void) const throw()
 {
 	return (this->_errorMessage.c_str());
+}
+
+Form::FormAlreadySignedException::~FormAlreadySignedException(void) throw()
+{
+	return ;
 }
 
 Form::FormNotSignedException::FormNotSignedException(std::string error)
@@ -134,11 +149,15 @@ Form::FormNotSignedException::FormNotSignedException(std::string error)
 	return ;
 }
 
-const char	*Form::FormNotSignedException::what(void) const noexcept
+const char	*Form::FormNotSignedException::what(void) const throw()
 {
 	return (this->_errorMessage.c_str());
 }
 
+Form::FormNotSignedException::~FormNotSignedException(void) throw()
+{
+	return ;
+}
 std::ostream	&operator<<(std::ostream &o, Form const &src)
 {
 	std::cout << src.getName();
