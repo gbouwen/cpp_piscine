@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 14:26:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 17:09:32 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 17:29:11 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,13 @@ int	main(void)
 	std::cout << "data->s1: " << data->s1 << std::endl;
 	std::cout << "data->n: " << data->n << std::endl;
 	std::cout << "data->s2: " << data->s2 << std::endl;
+
+	char	*temp = new char[20];
+	temp = reinterpret_cast<char *>(raw);
+	int size = 0;
+	for (int i = 0; temp[i]; i++)
+		size += sizeof(temp[i]);
+	std::cout << size << std::endl;
 	delete (data);
 	return (0);
 }
