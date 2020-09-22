@@ -14,6 +14,7 @@
 # define FRAGTRAP_HPP
 
 # include <iostream>
+# include <cstdlib>
 
 class FragTrap
 {
