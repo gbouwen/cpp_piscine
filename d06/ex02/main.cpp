@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 17:30:16 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 12:58:24 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 18:00:44 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,12 @@ void	identify_from_reference(Base &p)
 
 int	main(void)
 {
-	Base *base = new Base();
+	Base *base;
 
 	srand(time(NULL));
 	base = generate();
 	identify_from_pointer(base);
 	identify_from_reference(*base);
+	delete (base);
 	return (0);
 }
