@@ -6,12 +6,14 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/18 14:26:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/21 17:14:27 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 17:09:32 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
+#include <cstring>
 
 struct	Data
 {
@@ -22,27 +24,34 @@ struct	Data
 
 void	*serialize(void)
 {
-	Data	*data = new Data;
-	char	temp[9];
+	char	*data = new char[20];
 	char	alphaNumeric[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 	for (int i = 0; i < 8; i++)
-		temp[i] = alphaNumeric[rand() % (sizeof(alphaNumeric) - 1)];
-	data->s1 = temp;
-	data->n = rand();
-	for (int i = 0; i < 8; i++)
-		temp[i] = alphaNumeric[rand() % (sizeof(alphaNumeric) - 1)];
-	data->s2 = temp;
+		data[i] = alphaNumeric[rand() % (sizeof(alphaNumeric) - 1)];
+	*reinterpret_cast<int *>(data + 8) = rand();
+	for (int i = 12; i < 20; i++)
+		data[i] = alphaNumeric[rand() % (sizeof(alphaNumeric) - 1)];
 	return (reinterpret_cast<void *>(data));
 }
 
 Data	*deserialize(void *raw)
 {
-	return (reinterpret_cast<Data *>(raw));
+	Data		*data = new Data();
+	char		*temp;
+
+	temp = static_cast<char *>(raw);
+	data->s1 = std::string(temp).substr(0, 8);
+	temp += 8;
+	memcpy(&data->n, temp, sizeof(int));
+	temp += 4;
+	data->s2 = std::string(temp).substr(0, 8);
+	return (data);
 }
 
 int	main(void)
 {
+	srand(time(NULL));
 	void *raw = serialize();
 	Data *data = deserialize(raw);
 
