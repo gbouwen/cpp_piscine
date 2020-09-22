@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 15:23:45 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/04 17:21:16 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 10:39:27 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,29 @@ void		handleError(int	error)
 		std::cout << "Could not open file." << std::endl;
 	if (error == 3)
 		std::cout << "Could not create output file stream." << std::endl;
-	exit(0);
+	return ;
 }
 
 int			main(int ac, char **av)
 {
 	if (ac != 4)
+	{
 		handleError(1);
+		return (-1);
+	}
 	std::ifstream	fileStream(av[1]);
 	if (!fileStream)
+	{
 		handleError(2);
+		return (-1);
+	}
 	std::string		newName = getCorrectReplacementName(av[1]);
-	std::ofstream	replacementStream(newName);
+	std::ofstream	replacementStream(newName.c_str());
 	if (!replacementStream)
+	{
 		handleError(3);
+		return (-1);
+	}
 	replaceWords(fileStream, replacementStream, av[2], av[3]);
 	return (0);
 }
