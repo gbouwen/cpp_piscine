@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 15:21:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 14:36:23 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 14:50:30 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	std::string target = this->getTarget() + "_shrubbery";
+	std::string		target = this->getTarget() + "_shrubbery";
 	std::ofstream	targetFile(target.c_str());
 
 	if (!targetFile)
