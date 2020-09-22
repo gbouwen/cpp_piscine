@@ -113,7 +113,7 @@ void	ScavTrap::beRepaired(unsigned int amount)
 
 void	ScavTrap::challengeNewcomer(std::string const &newcomer)
 {
-	std::string	challenges[5] { "Game of Rock, Paper, Scissors",
+	std::string	challenges[5] = { "Game of Rock, Paper, Scissors",
 								"Dance battle",
 								"100 meter sprint",
 								"Game of chess",
