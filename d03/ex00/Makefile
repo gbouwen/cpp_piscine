@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fragtrap
+NAME = test
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCE_CPP = main.cpp FragTrap.cpp
