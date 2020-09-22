@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 10:19:19 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 14:30:46 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 13:40:57 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ public:
 
 		GradeTooHighException(std::string error);
 
-		const char	*what(void) const noexcept;
+		const char	*what(void) const throw();
+		~GradeTooHighException(void) throw();
 
 	private:
 
@@ -58,7 +59,8 @@ public:
 
 		GradeTooLowException(std::string error);
 
-		const char	*what(void) const noexcept;
+		const char	*what(void) const throw();
+		~GradeTooLowException(void) throw();
 
 	private:
 

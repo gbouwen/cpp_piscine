@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:36:47 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 17:39:06 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/22 13:45:29 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,14 @@ Form::GradeTooHighException::GradeTooHighException(std::string error)
 	return ;
 }
 
-const char	*Form::GradeTooHighException::what(void) const noexcept
+const char	*Form::GradeTooHighException::what(void) const throw()
 {
 	return (this->_errorMessage.c_str());
+}
+
+Form::GradeTooHighException::~GradeTooHighException(void) throw()
+{
+	return ;
 }
 
 Form::GradeTooLowException::GradeTooLowException(std::string error)
@@ -98,9 +103,14 @@ Form::GradeTooLowException::GradeTooLowException(std::string error)
 	return ;
 }
 
-const char	*Form::GradeTooLowException::what(void) const noexcept
+const char	*Form::GradeTooLowException::what(void) const throw()
 {
 	return (this->_errorMessage.c_str());
+}
+
+Form::GradeTooLowException::~GradeTooLowException(void) throw()
+{
+	return ;
 }
 
 Form::FormAlreadySignedException::FormAlreadySignedException(std::string error)
@@ -109,9 +119,14 @@ Form::FormAlreadySignedException::FormAlreadySignedException(std::string error)
 	return ;
 }
 
-const char	*Form::FormAlreadySignedException::what(void) const noexcept
+const char	*Form::FormAlreadySignedException::what(void) const throw()
 {
 	return (this->_errorMessage.c_str());
+}
+
+Form::FormAlreadySignedException::~FormAlreadySignedException(void) throw()
+{
+	return ;
 }
 
 std::ostream	&operator<<(std::ostream &o, Form const &src)
