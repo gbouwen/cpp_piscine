@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 16:30:11 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/03 17:29:48 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/23 11:04:03 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 ZombieHorde::ZombieHorde(int n) : _amount(n)
 {
-	Zombie	*zombies = new Zombie[n];
-
-	this->_zombies = zombies;
+	this->_zombies = new Zombie[n];
+	for (int i = 0; i < n; i++)
+	{
+		this->_zombies[i].setRandomType();
+		this->_zombies[i].setRandomName();
+	}
 	std::cout << "- ZombieHorde constructor called!" << std::endl;
 	return ;
 }

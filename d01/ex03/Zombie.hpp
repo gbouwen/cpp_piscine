@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:35:14 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/03 14:34:01 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/23 11:08:20 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ public:
 	Zombie(std::string _type, std::string _name);
 	~Zombie(void);
 
-	void	announce();
+	void	announce() const;
+
+	void	setRandomType(void);
+	void	setRandomName(void);
 
 private:
 
