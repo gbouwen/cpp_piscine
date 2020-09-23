@@ -6,16 +6,15 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/05 13:40:37 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/25 13:11:03 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/23 17:10:09 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
-	this->_value = 0;
 	return ;
 }
 
