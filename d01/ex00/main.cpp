@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:11:26 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/03 17:36:10 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/23 10:32:35 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ponyOnTheStack()
 	stack.getName();
 	stack.getColor();
 	stack.getAge();
+	return ;
 }
 
 void	ponyOnTheHeap()
@@ -35,6 +36,7 @@ void	ponyOnTheHeap()
 	heap->getColor();
 	heap->getAge();
 	delete heap;
+	return ;
 }
 
 int	main(void)
