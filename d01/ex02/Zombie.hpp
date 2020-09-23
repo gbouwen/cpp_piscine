@@ -24,7 +24,7 @@ public:
 	Zombie(std::string _type, std::string _name);
 	~Zombie(void);
 
-	void	announce();
+	void	announce() const;
 
 private:
 
