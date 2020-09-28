@@ -54,6 +54,13 @@ public:
 		return (*this);
 	}
 
+	T		&operator[](unsigned int n) const
+	{
+		if (n >= this->_size)
+			throw (Array::AccessOutOfLimitException("Accessing array member out of limit"));
+		return (this->_array[n]);
+	}
+
 	class	AccessOutOfLimitException : public std::exception
 	{
 
@@ -79,13 +86,6 @@ public:
 
 		std::string	_errorMessage;
 	};
-
-	T		&operator[](unsigned int n) const
-	{
-		if (n >= this->_size)
-			throw (Array::AccessOutOfLimitException("Accessing array member out of limit"));
-		return (this->_array[n]);
-	}
 
 	unsigned int	size(void) const
 	{
