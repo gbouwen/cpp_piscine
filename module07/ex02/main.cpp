@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/23 15:46:04 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/25 15:13:24 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/28 11:20:24 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 	Array<int>		copy(first);
 
