@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/23 15:17:32 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/25 11:48:49 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/28 10:51:34 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	iter(T *array, size_t const length, void (*func)(T const &t))
 }
 
 template <typename T>
-void	printT(T element)
+void	printT(T const &element)
 {
 	std::cout << element << std::endl;
 	return ;
