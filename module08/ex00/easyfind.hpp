@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:09:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/28 17:42:47 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/29 10:18:35 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typename T::const_iterator	easyfind(T &container, int value)
 	typename T::const_iterator	cit;
 
 	cit = std::find(container.begin(), container.end(), value);
+	if (cit == container.end())
+		throw (std::logic_error("Could not find value in range"));
 	return (cit);
 }
 
