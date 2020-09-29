@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:43:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/29 11:05:59 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/29 15:44:45 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,14 @@ int	main(void)
 	sp.addNumber(9);
 	sp.addNumber(11);
 
-//	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+	try
+	{
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 	return (0);
 }
