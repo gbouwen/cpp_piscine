@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:44:54 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/29 15:43:57 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/30 10:33:57 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Span::Span(Span const &src)
 	return ;
 }
 
-Span::Span(unsigned int n) : _size(n)
+Span::Span(unsigned int n) : _maxSize(n)
 {
 	return ;
 }
@@ -38,14 +38,14 @@ Span const	&Span::operator=(Span const &rhs)
 	if (this != &rhs)
 	{
 		this->_vector = rhs._vector;
-		this->_size = rhs._size;
+		this->_maxSize = rhs._maxSize;
 	}
 	return (*this);
 }
 
 void	Span::addNumber(int n)
 {
-	if (this->_vector.size() > this->_size)
+	if (this->_vector.size() >= this->_maxSize)
 		throw(std::runtime_error("List is full"));
 	this->_vector.push_back(n);
 	return ;
@@ -75,7 +75,7 @@ int		Span::longestSpan(void)
 
 	if (this->_vector.empty() || this->_vector.size() == 1)
 		throw (std::runtime_error("Could not find span"));
-	std::sort(this->_vector.begin(), this->_vector.end());
-	result = this->_vector[this->_vector.size() - 1] - this->_vector[0];
+	result =	*max_element(this->_vector.begin(), this->_vector.end()) -
+				*min_element(this->_vector.begin(), this->_vector.end());
 	return (result);
 }

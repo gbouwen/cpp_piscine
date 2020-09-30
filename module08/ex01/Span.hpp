@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:45:01 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/29 15:18:26 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/29 16:16:59 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ private:
 	Span(void);
 
 	std::vector<int>	_vector;
-	unsigned int		_size;
+	unsigned int		_maxSize;
 };
 
 #endif
