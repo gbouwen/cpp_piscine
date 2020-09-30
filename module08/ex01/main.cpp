@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:43:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/29 16:20:47 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/30 11:26:28 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,46 @@ void	testSmall(void)
 void	testLarge(void)
 {
 	srand(time(NULL));
+	std::vector<int>	vector;
 
 	std::cout << "---------------" << std::endl;
 	std::cout << "Testing second:" << std::endl;
 	Span	spTwo = Span(10000);
 	for (int i = 0; i < 10000; i++)
-		spTwo.addNumber(rand());
+		vector.push_back(rand());
+	spTwo.addRange(vector.begin(), vector.end());
+	try
+	{
+		std::cout << spTwo.shortestSpan() << std::endl;
+		std::cout << spTwo.longestSpan() << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+	return ;
+}
+
+void	testLargeFull(void)
+{
+	srand(time(NULL));
+	std::vector<int>	vector;
+
+	std::cout << "---------------" << std::endl;
+	std::cout << "Testing second:" << std::endl;
+	Span	spTwo = Span(10000);
+	for (int i = 0; i < 10000; i++)
+		vector.push_back(rand());
+	try
+	{
+		spTwo.addNumber(10);
+		spTwo.addNumber(500);
+		spTwo.addRange(vector.begin(), vector.end());
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 	try
 	{
 		std::cout << spTwo.shortestSpan() << std::endl;
@@ -115,6 +149,7 @@ int	main(void)
 {
 	testSmall();
 	testLarge();
+	testLargeFull();
 	testEmpty();
 	testSizeOne();
 	testFullVector();

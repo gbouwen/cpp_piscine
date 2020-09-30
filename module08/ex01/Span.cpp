@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:44:54 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/30 10:33:57 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/30 11:23:51 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		Span::shortestSpan(void)
 	return (shortest);
 }
 
-int		Span::longestSpan(void)
+int		Span::longestSpan(void) const
 {
 	int	result;
 
@@ -77,5 +77,7 @@ int		Span::longestSpan(void)
 		throw (std::runtime_error("Could not find span"));
 	result =	*max_element(this->_vector.begin(), this->_vector.end()) -
 				*min_element(this->_vector.begin(), this->_vector.end());
+	if (!result)
+		throw (std::runtime_error("Could not find span"));
 	return (result);
 }
