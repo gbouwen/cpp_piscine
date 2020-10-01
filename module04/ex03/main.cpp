@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 14:20:29 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/08 16:40:30 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/01 11:14:42 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	main(void)
 
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
-	tmp=src->createMateria("cure");
+	delete (tmp);
+	tmp = src->createMateria("cure");
 	me->equip(tmp);
 
 	ICharacter	*bob = new Character("bob");
@@ -38,8 +39,9 @@ int	main(void)
 	me->use(0, *bob);
 	me->use(1, *bob);
 
-	delete bob;
-	delete me;
-	delete src;
+	delete (bob);
+	delete (me);
+	delete (src);
+	delete (tmp);
 	return (0);
 }
