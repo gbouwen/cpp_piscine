@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 12:03:01 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 16:22:39 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/01 11:06:30 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,8 @@ int	main(void)
 	me->attack(mutant);
 	std::cout << *me;
 
+	delete (me);
+	delete (pr);
+	delete (pf);
 	return (0);
 }
