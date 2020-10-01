@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/29 16:43:44 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/01 13:48:16 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/01 13:49:44 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ void	subjectMain(void)
 	std::stack<int> s(mstack);
 	s.push(100);
 	std::cout << s.top() << std::endl;
+
+	std::stack<int> s2 = mstack;
+	s2.push(100);
+	std::cout << s2.top() << std::endl;
+
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/29 16:44:17 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/01 13:45:16 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/01 13:50:00 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ public:
 	}
 	~MutantStack(void) { return ; }
 
-   /* MutantStack	&operator=(MutantStack const &rhs)*/
+	MutantStack	&operator=(MutantStack const &rhs)
+	{
+		*this = rhs;
+		return (*this);
+	}
 
 	typedef typename std::stack<T>::container_type::iterator	iterator;
 	typename std::stack<T>::container_type::iterator			begin(void)
