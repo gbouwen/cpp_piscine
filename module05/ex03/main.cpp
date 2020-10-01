@@ -29,5 +29,6 @@ int	main(void)
 	bob.signForm(*form);
 	bob.executeForm(*form);
 	form->execute(bob);
+	delete (form);
 	return (0);
 }
