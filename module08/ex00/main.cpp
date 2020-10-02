@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:08:39 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/29 10:23:37 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 12:01:26 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <list>
 #include <vector>
 
-int	main(void)
+void	testList(void)
 {
 	std::list<int>					list;
 	std::list<int>::const_iterator	list_iterator;
@@ -35,6 +35,11 @@ int	main(void)
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
+	return ;
+}
+
+void	testVector(void)
+{
 	std::vector<int>					vector;
 	std::vector<int>::const_iterator	vector_iterator;
 
@@ -52,5 +57,11 @@ int	main(void)
 	{
 		std::cout << "Error: " << e.what() << std::endl;
 	}
+}
+
+int	main(void)
+{
+	testList();
+	testVector();
 	return (0);
 }
