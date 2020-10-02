@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 15:23:45 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/02 14:56:10 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 15:32:45 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,22 @@ std::string	getCorrectReplacementName(std::string original)
 }
 
 void		replaceWords(std::ifstream &file, std::ofstream &replacementFile,
-							std::string wordToReplace, std::string replacementWord)
+							std::string wordToReplace, std::string newWord)
 {
 	std::string	line;
 	size_t		pos;
 
-	pos = 0;
 	while (getline(file, line))
 	{
+		pos = 0;
 		while (pos < line.length())
 		{
-			pos = line.find(wordToReplace, pos);
-			if (pos < line.length())
-				line.replace(pos, wordToReplace.length(), replacementWord);
+			pos = line.find(wordToReplace.c_str(), pos, wordToReplace.length());
+			std::cout << pos << std::endl;
+			if (pos > line.length())
+				break ;
+			line.replace(pos, wordToReplace.length(), newWord);
+			pos++;
 		}
 		if (!file.eof())
 			replacementFile << line << std::endl;
