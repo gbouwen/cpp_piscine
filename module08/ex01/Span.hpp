@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:45:01 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/30 11:23:55 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 12:04:20 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ public:
 		this->_vector.insert(this->_vector.end(), begin, end);
 		return ;
 	}
+
 	void	addNumber(int n);
 	int		shortestSpan(void);
 	int		longestSpan(void) const;
