@@ -6,11 +6,12 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/29 16:43:44 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/01 13:49:44 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 10:36:28 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <list>
 
 void	subjectMain(void)
 {
@@ -53,6 +54,17 @@ void	subjectMain(void)
 
 int main()
 {
+	std::cout << "--- Testing subject main ---" << std::endl;
 	subjectMain();
+	std::cout << "----------------------------" << std::endl;
+
+	MutantStack<int>	s;
+
+	s.push(5);
+	std::cout << s.top() << std::endl;
+
+	std::stack< int, std::list<int> > a;
+	a.push(5);
+	std::cout << a.top() << std::endl;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/29 16:44:17 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/01 13:50:00 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 10:36:18 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define MUTANTSTACK_HPP
 
 # include <iostream>
-# include <deque>
 # include <stack>
 
 template <typename T>
@@ -24,6 +23,7 @@ class MutantStack : public std::stack<T>
 public:
 
 	MutantStack(void) { return ; }
+
 	MutantStack(MutantStack const &src)
 	{
 		*this = src;
@@ -33,7 +33,8 @@ public:
 
 	MutantStack	&operator=(MutantStack const &rhs)
 	{
-		*this = rhs;
+		if (this != &rhs)
+			this->c = rhs.c;
 		return (*this);
 	}
 
