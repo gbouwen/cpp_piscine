@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/04 15:23:45 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/23 14:21:14 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 14:56:10 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void		replaceWords(std::ifstream &file, std::ofstream &replacementFile,
 	{
 		while (pos < line.length())
 		{
-			pos = line.find(wordToReplace);
+			pos = line.find(wordToReplace, pos);
 			if (pos < line.length())
 				line.replace(pos, wordToReplace.length(), replacementWord);
 		}
