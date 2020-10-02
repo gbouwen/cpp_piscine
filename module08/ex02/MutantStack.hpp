@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/29 16:44:17 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/02 11:03:46 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 12:11:14 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,21 @@ class MutantStack : public std::stack<T>
 
 public:
 
-	MutantStack(void) { return ; }
+	MutantStack(void)
+	{
+		return ;
+	}
 
 	MutantStack(MutantStack const &src)
 	{
 		*this = src;
 		return ;
 	}
-	~MutantStack(void) { return ; }
+
+	~MutantStack(void)
+	{
+		return ;
+	}
 
 	MutantStack	&operator=(MutantStack const &rhs)
 	{
