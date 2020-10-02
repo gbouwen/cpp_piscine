@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/29 16:43:44 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/02 11:30:22 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 12:09:53 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,5 @@ int main()
 	std::cout << "--- Testing extra main 2---" << std::endl;
 	extraMainTwo();
 	std::cout << "--------------------------" << std::endl;
-
 	return (0);
 }
