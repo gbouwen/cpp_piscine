@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:43:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/30 11:26:28 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 14:33:00 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	testSmall(void)
 	spOne.addNumber(5);
 	spOne.addNumber(3);
 	spOne.addNumber(17);
-	spOne.addNumber(9);
-	spOne.addNumber(11);
+	spOne.addNumber(0);
+	spOne.addNumber(-2147483648);
 	try
 	{
-		std::cout << spOne.shortestSpan() << std::endl;
-		std::cout << spOne.longestSpan() << std::endl;
+		std::cout << "shortest span: " << spOne.shortestSpan() << std::endl;
+		std::cout << "longest span: " << spOne.longestSpan() << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -48,8 +48,8 @@ void	testLarge(void)
 	spTwo.addRange(vector.begin(), vector.end());
 	try
 	{
-		std::cout << spTwo.shortestSpan() << std::endl;
-		std::cout << spTwo.longestSpan() << std::endl;
+		std::cout << "shortest span: " << spTwo.shortestSpan() << std::endl;
+		std::cout << "longest span: " << spTwo.longestSpan() << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -80,8 +80,8 @@ void	testLargeFull(void)
 	}
 	try
 	{
-		std::cout << spTwo.shortestSpan() << std::endl;
-		std::cout << spTwo.longestSpan() << std::endl;
+		std::cout << "shortest span: " << spTwo.shortestSpan() << std::endl;
+		std::cout << "longest span: " << spTwo.longestSpan() << std::endl;
 	}
 	catch (std::exception &e)
 	{
