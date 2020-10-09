@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 10:55:21 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/08 17:47:26 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ class FragTrap : public ClapTrap
 public:
 
 	FragTrap(void);
+	FragTrap(FragTrap const &src);
 	FragTrap(std::string name);
 	~FragTrap(void);
+
+	FragTrap	&operator=(FragTrap const &rhs);
 
 	void	vaultHunter_dot_exe(std::string const &target);
 };

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 16:37:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/26 11:57:23 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/08 17:57:15 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(void)
 ClapTrap::ClapTrap(ClapTrap const &src)
 {
 	*this = src;
-	std::cout << "ClapTrap here!" << std::endl;
+	std::cout << "ClapTrap copy!" << std::endl;
 	return ;
 }
 

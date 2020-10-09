@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/26 16:28:10 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/09 11:02:09 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : virtual public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 
 public:
 
 	FragTrap(void);
+	FragTrap(FragTrap const &src);
 	FragTrap(std::string name);
 	~FragTrap(void);
+
+	FragTrap	&operator=(FragTrap const &rhs);
 
 	void	vaultHunter_dot_exe(std::string const &target);
 };

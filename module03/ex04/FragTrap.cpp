@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/26 16:28:02 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/09 11:09:52 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,35 @@ FragTrap::FragTrap(std::string name)
 	return ;
 }
 
+FragTrap::FragTrap(FragTrap const &src)
+{
+	*this = src;
+	std::cout << "[" << this->_name << "]: Look out everybody! Things are about to get awesome!" << std::endl;
+	return ;
+}
+
 FragTrap::~FragTrap(void)
 {
 	std::cout << "FRAGTRAP [" << this->_name << "]: Ow hohoho, that hurts! Yipes!" << std::endl;
 	return ;
+}
+
+FragTrap	&FragTrap::operator=(FragTrap const &rhs)
+{
+	if (this != &rhs)
+	{
+		this->_hitPoints = rhs._hitPoints;
+		this->_maxHitPoints = rhs._maxHitPoints;
+		this->_energyPoints = rhs._energyPoints;
+		this->_maxEnergyPoints = rhs._maxEnergyPoints;
+		this->_level = rhs._level;
+		this->_name = rhs._name;
+		this->_meleeAttackDamage = rhs._meleeAttackDamage;
+		this->_rangedAttackDamage = rhs._rangedAttackDamage;
+		this->_armorDamageReduction = rhs._armorDamageReduction;
+	}
+	std::cout << "[" << this->_name << "]: Recompiling my combat code!" << std::endl;
+	return (*this);
 }
 
 void	FragTrap::vaultHunter_dot_exe(std::string const &target)
