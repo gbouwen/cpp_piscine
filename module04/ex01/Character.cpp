@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:57:35 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 16:21:40 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/14 11:30:31 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	Character::recoverAP(void)
 {
 	if (this->_ap < 40)
 		this->_ap += 10;
+	return ;
 }
 
 void	Character::attack(Enemy *target)
@@ -87,16 +88,16 @@ std::string const	Character::getWeaponName(void) const
 	return (this->_weapon->getName());
 }
 
-int					Character::isWeapon(void) const
+bool	Character::hasWeapon(void) const
 {
 	if (this->_weapon)
-		return (1);
-	return (0);
+		return (true);
+	return (false);
 }
 
 std::ostream	&operator<<(std::ostream &o, Character const &src)
 {
-	if (src.isWeapon())
+	if (src.hasWeapon())
 		std::cout << src.getName() << " has " << src.getAP() << " AP and wields a " << src.getWeaponName() << std::endl;
 	else
 		std::cout << src.getName() << " has " << src.getAP() << " AP and is unarmed" << std::endl;

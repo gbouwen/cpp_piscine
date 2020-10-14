@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/09 11:09:52 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:50:16 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,20 @@ FragTrap	&FragTrap::operator=(FragTrap const &rhs)
 	}
 	std::cout << "[" << this->_name << "]: Recompiling my combat code!" << std::endl;
 	return (*this);
+}
+
+void	FragTrap::rangedAttack(std::string const &target)
+{
+	std::cout	<< "[" << this->_name << "]: Ranged attack on " << target
+				<< " caused " << this->_rangedAttackDamage << " points of damage!" << std::endl;
+	return ;
+}
+
+void	FragTrap::meleeAttack(std::string const &target)
+{
+	std::cout	<< "[" << this->_name << "]: Melee attack on " << target
+				<< " caused " << this->_meleeAttackDamage << " points of damage!" << std::endl;
+	return ;
 }
 
 void	FragTrap::vaultHunter_dot_exe(std::string const &target)

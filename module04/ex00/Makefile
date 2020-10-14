@@ -6,14 +6,14 @@
 #    By: gbouwen <gbouwen@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/29 09:29:26 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/09/22 10:23:23 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/14 12:32:31 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = test
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCE_CPP = main.cpp Peon.cpp Sorcerer.cpp Victim.cpp
+SOURCE_CPP = main.cpp Sorcerer.cpp Victim.cpp Peon.cpp Alien.cpp Zombie.cpp
 OBJECT_FILES = $(SOURCE_CPP:.cpp=.o)
 
 GREEN = \033[0;38;5;114m

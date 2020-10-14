@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:48:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 15:22:19 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/14 11:30:31 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 	std::string const	getName(void) const;
 	int 				getAP(void)	const;
 	std::string	const	getWeaponName(void) const;
-	int					isWeapon(void) const;
+	bool				hasWeapon(void) const;
 
 private:
 

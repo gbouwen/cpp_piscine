@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 16:37:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/08 17:57:15 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:43:38 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,6 @@ ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 	}
 	std::cout << "ClapTrap =" << std::endl;
 	return (*this);
-}
-
-void	ClapTrap::rangedAttack(std::string const &target)
-{
-	std::cout	<< "[" << this->_name << "]: Ranged attack on " << target
-				<< " caused " << this->_rangedAttackDamage << " points of damage!" << std::endl;
-	return ;
-}
-
-void	ClapTrap::meleeAttack(std::string const &target)
-{
-	std::cout	<< "[" << this->_name << "]: Melee attack on " << target
-				<< " caused " << this->_meleeAttackDamage << " points of damage!" << std::endl;
-	return ;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)

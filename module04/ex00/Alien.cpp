@@ -1,49 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.cpp                                           :+:    :+:            */
+/*   Alien.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:35:30 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/14 10:36:14 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/14 12:29:48 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "Alien.hpp"
 
-Peon::Peon(void)
+Alien::Alien(void)
 {
 	return ;
 }
 
-Peon::Peon(std::string name) : Victim(name)
+Alien::Alien(std::string name) : Victim(name)
 {
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "I'm alien." << std::endl;
 	return ;
 }
 
-Peon::Peon(Peon const &src)
+Alien::Alien(Alien const &src)
 {
 	*this = src;
 	return ;
 }
 
-Peon::~Peon(void)
+Alien::~Alien(void)
 {
-	std::cout << "Bleuark..." << std::endl;
+	std::cout << "Alien dead." << std::endl;
 	return ;
 }
 
-Peon	&Peon::operator=(Peon const &rhs)
+Alien	&Alien::operator=(Alien const &rhs)
 {
 	if (this != &rhs)
 		this->_name = rhs._name;
 	return (*this);
 }
 
-void	Peon::getPolymorphed(void) const
+void	Alien::getPolymorphed(void) const
 {
-	std::cout << this->_name << " has been turned into a pink pony!" << std::endl;
+	std::cout << this->_name << " has been turned into a pink dolphin!" << std::endl;
 	return ;
 }

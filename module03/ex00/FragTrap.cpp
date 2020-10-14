@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/08/25 15:31:25 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:35:28 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,8 +119,12 @@ void	FragTrap::vaultHunter_dot_exe(std::string const &target)
 		std::string	attacks[5] = { "Grenade", "Sniper", "Shotgun", "C4", "Flamethrower" };
 
 		std::cout << "[" << this->_name << "]: Hit " << target << " with a " << attacks[rand() % 5] << "!" << std::endl;
+		std::cout << "Current energy points: " << this->_energyPoints << std::endl;
 	}
 	else
+	{
 		std::cout << "[" << this->_name << "]: I don't have enough energy left for this move..." << std::endl;
+		std::cout << "Current energy points: " << this->_energyPoints << std::endl;
+	}
 	return ;
 }

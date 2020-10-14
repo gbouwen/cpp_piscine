@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/08 17:48:23 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:47:24 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ public:
 	~ScavTrap(void);
 
 	ScavTrap	&operator=(ScavTrap const &rhs);
+
+	void	rangedAttack(std::string const &target);
+	void	meleeAttack(std::string const &target);
 
 	void	challengeNewcomer(std::string const &newcomer);
 };

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 11:15:33 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 13:13:05 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/14 11:37:14 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 
 	virtual void	attack(void) const = 0;
 
-protected:
+private:
 
 	std::string	_name;
 	int			_damage;

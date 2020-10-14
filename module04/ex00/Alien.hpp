@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   FragTrap.hpp                                       :+:    :+:            */
+/*   Alien.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/25 12:25:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/13 10:43:33 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/01 13:35:34 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/10/14 12:29:42 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#include "Victim.hpp"
 
-# include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap
+class Alien : public Victim
 {
 
 public:
 
-	FragTrap(void);
-	FragTrap(FragTrap const &src);
-	FragTrap(std::string name);
-	~FragTrap(void);
+	Alien(std::string name);
+	Alien(Alien const &src);
+	virtual	~Alien(void);
 
-	FragTrap	&operator=(FragTrap const &rhs);
+	Alien	&operator=(Alien const &rhs);
 
-	void	rangedAttack(std::string const &target);
-	void	meleeAttack(std::string const &target);
+	void	getPolymorphed(void) const;
 
-	void	vaultHunter_dot_exe(std::string const &target);
+private:
+
+	Alien(void);
 };
-
-#endif

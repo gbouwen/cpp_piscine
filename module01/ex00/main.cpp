@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 11:11:26 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/23 10:32:35 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/08 10:49:47 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ponyOnTheHeap()
 	heap->getName();
 	heap->getColor();
 	heap->getAge();
-	delete heap;
+	delete (heap);
 	return ;
 }
 

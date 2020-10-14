@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:16:24 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 15:29:04 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/14 11:22:48 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int					Enemy::getHP(void) const
 
 void		Enemy::takeDamage(int damage)
 {
+	if (this->_hp == 0)
+		return ;
 	if (damage > 0)
 		this->_hp -= damage;
 	return ;

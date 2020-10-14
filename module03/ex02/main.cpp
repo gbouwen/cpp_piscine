@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 15:09:37 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/08 18:09:41 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:46:31 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	main(void)
 		FragTrap	one;
 		std::cout << "FragTrap two(one);" << std::endl;
 		FragTrap	two(one);
-		std::cout << "FragTrap three(CLAPTRAP);" << std::endl;
-		FragTrap	three("CLAPTRAP");
+		std::cout << "FragTrap three(FRAGTRAP);" << std::endl;
+		FragTrap	three("FRAGTRAP");
 
 		std::cout << "one = FragTrap(name);" << std::endl;
 		one = FragTrap("name");

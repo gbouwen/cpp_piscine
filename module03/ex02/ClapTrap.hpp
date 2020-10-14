@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 16:38:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/08 17:49:22 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:47:23 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ public:
 
 	ClapTrap	&operator=(ClapTrap const &rhs);
 
-	void	rangedAttack(std::string const &target);
-	void	meleeAttack(std::string const &target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 

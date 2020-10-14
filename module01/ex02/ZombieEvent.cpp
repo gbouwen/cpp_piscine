@@ -6,7 +6,7 @@
 /*   By: gbouwen <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/03 13:36:01 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/23 11:13:29 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/08 10:47:52 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Zombie	*ZombieEvent::newZombie(std::string name)
 
 Zombie	*ZombieEvent::randomChump(void)
 {
-	srand(time(NULL));
 	std::string names[8] = { "Bill", "Bob", "Joe", "James", "Michael", "Richard", "John", "Steve" };
 
 	Zombie	*zombie = new Zombie(this->_type, names[rand() % 8]);

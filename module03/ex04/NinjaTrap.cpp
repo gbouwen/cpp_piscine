@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 13:01:01 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/09 10:46:45 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:59:48 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,22 @@ NinjaTrap	&NinjaTrap::operator=(NinjaTrap const &rhs)
 	return (*this);
 }
 
+void	NinjaTrap::rangedAttack(std::string const &target)
+{
+	std::cout << "Ninja ranged attack on " << target << "! Did " << this->_rangedAttackDamage << " damage!" << std::endl;
+	return ;
+}
+
+void	NinjaTrap::meleeAttack(std::string const &target)
+{
+	std::cout << "Ninja melee attack on " << target << "! Did " << this->_meleeAttackDamage << " damage!" << std::endl;
+	return ;
+}
+
 void	NinjaTrap::ninjaShoebox(ClapTrap &ct)
 {
 	std::cout << "[" << this->_name << "]: What are you going to do, ClapTrap?" << std::endl;
-	ct.meleeAttack("ha");
+	(void)ct;
 	return ;
 }
 

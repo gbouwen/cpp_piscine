@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/08 17:47:50 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:52:21 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,20 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 	}
 	std::cout << "[" << this->_name << "]: Running the sequencer!" << std::endl;
 	return (*this);
+}
+
+void	ScavTrap::rangedAttack(std::string const &target)
+{
+	std::cout	<< "[" << this->_name << "]: Hit " << target
+				<< " with a ranged attack! Did " << this->_rangedAttackDamage << " points of damage!" << std::endl;
+	return ;
+}
+
+void	ScavTrap::meleeAttack(std::string const &target)
+{
+	std::cout	<< "[" << this->_name << "]: Hit " << target
+				<< " with a melee attack! Did " << this->_meleeAttackDamage << " points of damage!" << std::endl;
+	return ;
 }
 
 void	ScavTrap::challengeNewcomer(std::string const &newcomer)

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:40:10 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 13:44:21 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/14 11:32:23 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ SuperMutant::~SuperMutant(void)
 
 void	SuperMutant::takeDamage(int damage)
 {
-	damage -= 3;
-	if (damage > 0)
-		this->_hp -= damage;
+	Enemy::takeDamage(damage - 3);
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 14:10:00 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/09 11:09:53 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 11:17:50 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ public:
 	~SuperTrap(void);
 
 	SuperTrap	&operator=(SuperTrap const &rhs);
+
+	void	rangedAttack(std::string const &target);
+	void	meleeAttack(std::string const &target);
 };
 
 #endif

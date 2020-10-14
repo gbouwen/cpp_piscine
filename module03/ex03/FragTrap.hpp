@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 12:25:38 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/09 10:45:51 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:43:33 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ public:
 	~FragTrap(void);
 
 	FragTrap	&operator=(FragTrap const &rhs);
+
+	void	rangedAttack(std::string const &target);
+	void	meleeAttack(std::string const &target);
 
 	void	vaultHunter_dot_exe(std::string const &target);
 };

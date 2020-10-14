@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:30:14 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 13:42:19 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/14 11:23:26 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class SuperMutant : public Enemy
 public:
 
 	SuperMutant(void);
-	~SuperMutant(void);
+	virtual ~SuperMutant(void);
 
 	void	takeDamage(int damage);
 };

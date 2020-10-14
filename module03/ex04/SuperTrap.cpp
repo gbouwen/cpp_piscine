@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 14:09:47 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/09 11:09:52 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 11:05:37 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,16 @@ SuperTrap	&SuperTrap::operator=(SuperTrap const &rhs)
 	}
 	std::cout << "[" << this->_name << "]: SuperTrap operator overload here!" << std::endl;
 	return (*this);
+}
+
+void	SuperTrap::rangedAttack(std::string const &target)
+{
+	FragTrap::rangedAttack(target);
+	return ;
+}
+
+void	SuperTrap::meleeAttack(std::string const &target)
+{
+	NinjaTrap::meleeAttack(target);
+	return ;
 }

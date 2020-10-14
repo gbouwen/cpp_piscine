@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/25 15:09:37 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/09 10:29:17 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:59:11 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	main(void)
 	std::cout << "-------------------------------------------------------------------------" << std::endl;
 	{
 		std::cout << "NINJATRAP" << std::endl;
-		std::cout << "CONSTRUCOTR MESSAGES" << std::endl;
+		std::cout << "CONSTRUCTOR MESSAGES" << std::endl;
 		std::cout << "ClapTrap clapOne;" << std::endl;
 		ClapTrap	clapOne;
 		std::cout << "FragTrap fragOne;" << std::endl;

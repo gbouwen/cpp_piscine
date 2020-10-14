@@ -1,49 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.cpp                                           :+:    :+:            */
+/*   Zombie.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:35:30 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/14 10:36:14 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/14 12:30:54 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Peon.hpp"
+#include "Zombie.hpp"
 
-Peon::Peon(void)
+Zombie::Zombie(void)
 {
 	return ;
 }
 
-Peon::Peon(std::string name) : Victim(name)
+Zombie::Zombie(std::string name) : Victim(name)
 {
-	std::cout << "Zog zog." << std::endl;
+	std::cout << "I'm zombie." << std::endl;
 	return ;
 }
 
-Peon::Peon(Peon const &src)
+Zombie::Zombie(Zombie const &src)
 {
 	*this = src;
 	return ;
 }
 
-Peon::~Peon(void)
+Zombie::~Zombie(void)
 {
-	std::cout << "Bleuark..." << std::endl;
+	std::cout << "Zombie dead." << std::endl;
 	return ;
 }
 
-Peon	&Peon::operator=(Peon const &rhs)
+Zombie	&Zombie::operator=(Zombie const &rhs)
 {
 	if (this != &rhs)
 		this->_name = rhs._name;
 	return (*this);
 }
 
-void	Peon::getPolymorphed(void) const
+void	Zombie::getPolymorphed(void) const
 {
-	std::cout << this->_name << " has been turned into a pink pony!" << std::endl;
+	std::cout << this->_name << " has been turned into a pink whale!" << std::endl;
 	return ;
 }

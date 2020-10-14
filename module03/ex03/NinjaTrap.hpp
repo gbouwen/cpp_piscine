@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/26 13:01:36 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/09 10:46:31 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/13 10:53:25 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ public:
 	~NinjaTrap(void);
 
 	NinjaTrap	&operator=(NinjaTrap const &rhs);
+
+	void	rangedAttack(std::string const &target);
+	void	meleeAttack(std::string const &target);
 
 	void	ninjaShoebox(ClapTrap &ct);
 	void	ninjaShoebox(FragTrap &ft);

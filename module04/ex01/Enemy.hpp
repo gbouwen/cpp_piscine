@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:10:14 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/02 15:28:04 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/14 11:32:24 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 	int					getHP(void) const;
 	virtual void		takeDamage(int damage);
 
-protected:
+private:
 
 	Enemy(void);
 
