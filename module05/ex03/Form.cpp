@@ -6,32 +6,30 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:36:47 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 14:48:11 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 15:07:35 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void)
+Form::Form(void) : _name("default"), _signed(false), _gradeToSign(1), _gradeToExecute(1), _target("default")
 {
 	return ;
 }
 
-Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, std::string target) : _signed(false)
+Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, std::string target)
+			: _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _target(target)
 {
-	this->_name = name;
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw (Form::GradeTooHighException("Grade too high"));
 	if (gradeToSign > 150 || gradeToExecute > 150)
 		throw (Form::GradeTooLowException("Grade too low"));
-	this->_gradeToSign = gradeToSign;
-	this->_gradeToExecute = gradeToExecute;
-	this->_target = target;
+	return ;
 }
 
-Form::Form(Form const &src)
+Form::Form(Form const &src) : _name("default"), _gradeToSign(1), _gradeToExecute(1), _target("default")
 {
-	*this = src;
+	Form::operator=(src);
 	return ;
 }
 
@@ -43,12 +41,7 @@ Form::~Form(void)
 Form	&Form::operator=(Form const &rhs)
 {
 	if (this != &rhs)
-	{
-		this->_name = rhs._name;
 		this->_signed = rhs._signed;
-		this->_gradeToSign = rhs._gradeToSign;
-		this->_gradeToExecute = rhs._gradeToExecute;
-	}
 	return (*this);
 }
 
@@ -79,7 +72,7 @@ std::string		Form::getTarget(void) const
 
 void			Form::beSigned(Bureaucrat const &src)
 {
-	if (this->_gradeToSign < src.getGrade())
+	if (src.getGrade() > this->_gradeToSign)
 		throw (Form::GradeTooLowException("Grade too low"));
 	if (this->_signed)
 		throw (Form::FormAlreadySignedException("Form already signed"));
@@ -87,12 +80,19 @@ void			Form::beSigned(Bureaucrat const &src)
 	return ;
 }
 
-void			Form::execute(Bureaucrat const &executor) const
+void			Form::checkRequirements(Bureaucrat const &executor) const
 {
 	if (!this->_signed)
 		throw (Form::FormNotSignedException("Form not signed"));
 	if (executor.getGrade() > this->_gradeToExecute)
 		throw (Form::GradeTooLowException("Grade too low"));
+	return ;
+}
+
+void			Form::setSigned(bool isSigned)
+{
+	this->_signed = isSigned;
+	return ;
 }
 
 Form::GradeTooHighException::GradeTooHighException(std::string error)

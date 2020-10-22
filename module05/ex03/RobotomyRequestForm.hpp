@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 15:24:53 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/15 11:10:20 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 15:26:30 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ class RobotomyRequestForm : public Form
 
 public:
 
+	RobotomyRequestForm(void);
+	RobotomyRequestForm(RobotomyRequestForm const &src);
 	RobotomyRequestForm(std::string target);
+	virtual ~RobotomyRequestForm(void);
+
+	RobotomyRequestForm	&operator=(RobotomyRequestForm const &rhs);
 
 	void	execute(Bureaucrat const &executor) const;
 };

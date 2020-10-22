@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ICharacter.hpp                                     :+:    :+:            */
+/*   RuneScimitar.hpp                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/04 11:45:00 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/19 12:56:26 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/02 11:58:27 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/10/15 10:42:48 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef RUNESCIMITAR_HPP
+# define RUNESCIMITAR_HPP
 
-# include "AMateria.hpp"
+#include "AWeapon.hpp"
 
-class AMateria;
-
-class ICharacter
+class RuneScimitar : public AWeapon
 {
 
 public:
 
-	virtual ~ICharacter(void) {}
+	RuneScimitar(void);
+	virtual	~RuneScimitar(void);
 
-	virtual std::string	const	&getName(void) const = 0;
-	virtual void				equip(AMateria *m) = 0;
-	virtual void				unequip(int idx) = 0;
-	virtual void				use(int idx, ICharacter &target) = 0;
+	void	attack(void) const;
 };
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 10:30:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 13:51:12 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 14:39:42 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void)
+Bureaucrat::Bureaucrat(void) : _name("default"), _grade(1)
 {
 	return ;
 }
@@ -27,7 +27,7 @@ Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name)
 	return ;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name("default")
 {
 	*this = src;
 	return ;
@@ -41,10 +41,7 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	if (this != &rhs)
-	{
-		this->_name = rhs._name;
 		this->_grade = rhs._grade;
-	}
 	return (*this);
 }
 

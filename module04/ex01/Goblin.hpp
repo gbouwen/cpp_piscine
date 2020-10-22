@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ICharacter.hpp                                     :+:    :+:            */
+/*   Goblin.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/04 11:45:00 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/19 12:56:26 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/02 13:45:03 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/10/15 10:42:30 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#ifndef GOBLIN_HPP
+# define GOBLIN_HPP
 
-# include "AMateria.hpp"
+#include "Enemy.hpp"
 
-class AMateria;
-
-class ICharacter
+class Goblin : public Enemy
 {
 
 public:
 
-	virtual ~ICharacter(void) {}
+	Goblin(void);
+	virtual ~Goblin(void);
 
-	virtual std::string	const	&getName(void) const = 0;
-	virtual void				equip(AMateria *m) = 0;
-	virtual void				unequip(int idx) = 0;
-	virtual void				use(int idx, ICharacter &target) = 0;
 };
 
 #endif

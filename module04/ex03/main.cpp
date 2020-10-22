@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 14:20:29 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/01 11:14:42 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/19 13:06:58 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,31 @@ int	main(void)
 
 	ICharacter	*me = new Character("me");
 
-	AMateria	*tmp;
+	AMateria	*ice;
+	AMateria	*cure;
 
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	delete (tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	ice = src->createMateria("ice");
+	me->equip(ice);
+	cure = src->createMateria("cure");
+	me->equip(cure);
 
-	ICharacter	*bob = new Character("bob");
+	Character	*bob = new Character("bob");
 
+	std::cout << "1 ------" << std::endl;
 	me->use(0, *bob);
 	me->use(1, *bob);
+	std::cout << "2 ------" << std::endl;
+	ice->use(*bob);
+	cure->use(*bob);
+	std::cout << "3 ------" << std::endl;
+	ICharacter	*copy(me);
+	copy->use(0, *bob);
+	copy->use(1, *bob);
 
 	delete (bob);
 	delete (me);
 	delete (src);
-	delete (tmp);
+	delete (ice);
+	delete (cure);
 	return (0);
 }

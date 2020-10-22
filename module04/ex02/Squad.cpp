@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 11:59:55 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/08 13:33:58 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/15 11:46:05 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,14 @@ Squad::Squad(void)
 
 Squad::Squad(Squad const &src)
 {
-	*this = src;
+	this->_count = src._count;
+	this->_maxSize = src._maxSize;
+	for (int i = 0; i < this->_count; i++)
+		delete (this->_marines[i]);
+	delete [] (this->_marines);
+	this->_marines = new ISpaceMarine*[this->_maxSize];
+	for (int i = 0; i < this->_count; i++)
+		this->_marines[i] = src._marines[i]->clone();
 	return ;
 }
 
@@ -38,11 +45,11 @@ Squad	&Squad::operator=(Squad const &rhs)
 {
 	if (this != &rhs)
 	{
+		this->_count = rhs._count;
+		this->_maxSize = rhs._maxSize;
 		for (int i = 0; i < this->_count; i++)
 			delete (this->_marines[i]);
 		delete [] (this->_marines);
-		this->_count = rhs._count;
-		this->_maxSize = rhs._maxSize;
 		this->_marines = new ISpaceMarine*[this->_maxSize];
 		for (int i = 0; i < this->_count; i++)
 			this->_marines[i] = rhs._marines[i]->clone();

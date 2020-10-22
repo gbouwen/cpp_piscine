@@ -6,28 +6,27 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 10:30:02 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 13:35:35 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/22 10:23:16 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void)
+Bureaucrat::Bureaucrat(void) : _name("default"), _grade(1)
 {
 	return ;
 }
 
-Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name), _grade(grade)
 {
 	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException("Grade too high"));
 	if (grade > 150)
 		throw (Bureaucrat::GradeTooLowException("Grade too low"));
-	this->_grade = grade;
 	return ;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(Bureaucrat const &src) : _name("default")
 {
 	*this = src;
 	return ;
@@ -41,10 +40,7 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	if (this != &rhs)
-	{
-		this->_name = rhs._name;
 		this->_grade = rhs._grade;
-	}
 	return (*this);
 }
 
@@ -63,6 +59,7 @@ void			Bureaucrat::incrementGrade(void)
 	if ((this->_grade - 1) < 1)
 		throw (Bureaucrat::GradeTooHighException("Grade too high"));
 	this->_grade--;
+	return ;
 }
 
 void			Bureaucrat::decrementGrade(void)
@@ -70,6 +67,7 @@ void			Bureaucrat::decrementGrade(void)
 	if ((this->_grade + 1) > 150)
 		throw (Bureaucrat::GradeTooLowException("Grade too low"));
 	this->_grade++;
+	return ;
 }
 
 Bureaucrat::GradeTooHighException::GradeTooHighException(std::string error)

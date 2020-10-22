@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/23 15:46:04 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/28 11:20:24 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/09/28 11:19:19 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,6 @@ std::ostream & operator<<(std::ostream &o, Awesome const & rhs)
 {
 	o << rhs.get();
 	return (o);
-}
-
-template< typename T >
-void print(T const &x)
-{
-	std::cout << x << std::endl;
-	return;
 }
 
 int	main(void)

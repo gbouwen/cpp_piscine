@@ -6,7 +6,7 @@
 #    By: gbouwen <gbouwen@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/29 09:29:26 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/10/14 12:35:02 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/15 10:46:11 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = test
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCE_CPP =	main.cpp AWeapon.cpp Character.cpp Enemy.cpp \
-				PlasmaRifle.cpp PowerFist.cpp RadScorpion.cpp SuperMutant.cpp
+				PlasmaRifle.cpp PowerFist.cpp RadScorpion.cpp SuperMutant.cpp \
+				RuneScimitar.cpp Goblin.cpp
 OBJECT_FILES = $(SOURCE_CPP:.cpp=.o)
 
 GREEN = \033[0;38;5;114m

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 13:57:35 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/14 11:30:31 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/15 10:55:09 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Character::Character(void) : _name("default"), _ap(40), _weapon(NULL)
 {
+	std::cout << "Character is born" << std::endl;
 	return ;
 }
 
@@ -30,6 +31,7 @@ Character::Character(Character const &src)
 
 Character::~Character(void)
 {
+	std::cout << "Character is dead" << std::endl;
 	return ;
 }
 
@@ -56,8 +58,8 @@ void	Character::attack(Enemy *target)
 	if (target && this->_weapon && this->_ap >= this->_weapon->getAPCost())
 	{
 		std::cout << this->_name << " attacks " << target->getType() << " with a " << this->getWeaponName() << std::endl;
-		this->_ap -= this->_weapon->getAPCost();
 		this->_weapon->attack();
+		this->_ap -= this->_weapon->getAPCost();
 		target->takeDamage(this->_weapon->getDamage());
 		if (target->getHP() <= 0)
 			delete (target);

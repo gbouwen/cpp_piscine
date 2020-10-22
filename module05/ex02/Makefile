@@ -6,7 +6,7 @@
 #    By: gbouwen <gbouwen@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/29 09:29:26 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/09/22 13:51:51 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/21 13:46:10 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,5 +42,7 @@ fclean: clean
 	@echo "$(RED)Removed executable:$(NORMAL)	$(NAME)"
 	@echo "-----------------------------------"
 	@/bin/rm -f $(NAME)
+	@echo "$(RED)Removed _shrubbery files$(NORMAL)"
+	@/bin/rm -f *_shrubbery
 
 re: fclean all

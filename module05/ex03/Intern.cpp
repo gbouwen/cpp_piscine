@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/15 12:24:44 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/15 14:54:32 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 15:52:06 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ Intern	&Intern::operator=(Intern const &rhs)
 
 Form	*Intern::makeForm(std::string formName, std::string target)
 {
-	Form	*newForm;
-	int		nb;
+	Form	*newForm = NULL;
+	int		formNumber = -1;
 
 	this->_allFormTypes[0] = new ShrubberyCreationForm(target);
 	this->_allFormTypes[1] = new RobotomyRequestForm(target);
@@ -53,7 +53,7 @@ Form	*Intern::makeForm(std::string formName, std::string target)
 		if (formName == this->_allFormTypes[i]->getName())
 		{
 			newForm = this->_allFormTypes[i];
-			nb = i;
+			formNumber = i;
 		}
 	}
 	if (newForm)
@@ -62,7 +62,7 @@ Form	*Intern::makeForm(std::string formName, std::string target)
 		std::cout << "Intern failed to create " << formName << std::endl;
 	for (int i = 0; i < 3; i++)
 	{
-		if (nb != i)
+		if (i != formNumber)
 			delete (this->_allFormTypes[i]);
 	}
 	return (newForm);

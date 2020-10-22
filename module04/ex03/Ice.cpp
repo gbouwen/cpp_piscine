@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 10:55:06 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/01 11:11:27 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/19 12:54:20 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ Ice		*Ice::clone(void) const
 void	Ice::use(ICharacter &target)
 {
 	std::cout << "* shoots an icebolt at " << target.getName() << std::endl;
-	this->_xp += 10;
+	AMateria::use(target);
 	return ;
 }

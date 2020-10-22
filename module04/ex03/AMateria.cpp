@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 14:18:48 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/08 13:57:24 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/19 12:56:26 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,7 @@ AMateria::~AMateria(void)
 AMateria	&AMateria::operator=(AMateria const &rhs)
 {
 	if (this != &rhs)
-	{
-		this->_type = rhs._type;
 		this->_xp = rhs._xp;
-	}
 	return (*this);
 }
 
@@ -55,7 +52,7 @@ unsigned int		AMateria::getXP(void) const
 
 void				AMateria::use(ICharacter &target)
 {
-	std::cout << "Used AMateria on " << target.getName() << std::endl;
+	target.getName();
 	this->_xp += 10;
 	return ;
 }

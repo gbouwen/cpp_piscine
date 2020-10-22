@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 15:28:51 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/14 17:45:06 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 15:55:05 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ class PresidentialPardonForm : public Form
 
 public:
 
+	PresidentialPardonForm(void);
+	PresidentialPardonForm(PresidentialPardonForm const &src);
 	PresidentialPardonForm(std::string target);
+	virtual ~PresidentialPardonForm(void);
+
+	PresidentialPardonForm	&operator=(PresidentialPardonForm const &rhs);
 
 	void	execute(Bureaucrat const &executor) const;
 };

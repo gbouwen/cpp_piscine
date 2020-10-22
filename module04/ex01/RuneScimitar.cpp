@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ICharacter.hpp                                     :+:    :+:            */
+/*   RuneScimitar.cpp                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/04 11:45:00 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/19 12:56:26 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/02 12:01:14 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/10/15 10:56:20 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#include "RuneScimitar.hpp"
 
-# include "AMateria.hpp"
-
-class AMateria;
-
-class ICharacter
+RuneScimitar::RuneScimitar(void) : AWeapon("Rune Scimitar", 100, 5)
 {
+	std::cout << "RuneScimitar is born" << std::endl;
+	return ;
+}
 
-public:
+RuneScimitar::~RuneScimitar(void)
+{
+	std::cout << "RuneScimitar is dead" << std::endl;
+	return ;
+}
 
-	virtual ~ICharacter(void) {}
-
-	virtual std::string	const	&getName(void) const = 0;
-	virtual void				equip(AMateria *m) = 0;
-	virtual void				unequip(int idx) = 0;
-	virtual void				use(int idx, ICharacter &target) = 0;
-};
-
-#endif
+void	RuneScimitar::attack(void) const
+{
+	std::cout << "*Rune Scimitar noise*" << std::endl;
+	return ;
+}

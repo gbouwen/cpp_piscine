@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/15 14:31:46 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/15 14:42:28 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 15:57:38 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,21 @@ int	main(void)
 
 	form = randomDude.makeForm("eiowjfiowe", "bender");
 	if (!form)
-		std::cout << "error: could not create form" << std::endl;
+		std::cout << "Error: could not create form" << std::endl;
+	std::cout << "---------------------------" << std::endl;
 	form = randomDude.makeForm("Presidential pardon form", "bender");
 	bob.signForm(*form);
 	bob.executeForm(*form);
-	form->execute(bob);
+	delete (form);
+	std::cout << "------------------------------------" << std::endl;
+	form = randomDude.makeForm("Shrubbery creation form", "neighbour");
+	bob.signForm(*form);
+	bob.executeForm(*form);
+	delete (form);
+	std::cout << "------------------------------------" << std::endl;
+	form = randomDude.makeForm("Robotomy request form", "me");
+	bob.signForm(*form);
+	bob.executeForm(*form);
 	delete (form);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/04 11:17:19 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/08 15:57:41 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/19 12:56:25 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <iostream>
 # include "ICharacter.hpp"
 
-// forward declaration is used to avoid circular dependency
 class ICharacter;
 
 class AMateria
@@ -37,7 +36,7 @@ public:
 	virtual AMateria	*clone(void) const = 0;
 	virtual void		use(ICharacter &target);
 
-protected:
+private:
 
 	std::string		_type;
 	unsigned int	_xp;

@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ICharacter.hpp                                     :+:    :+:            */
+/*   Goblin.cpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/04 11:45:00 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/19 12:56:26 by gbouwen       ########   odam.nl         */
+/*   Created: 2020/09/02 13:44:48 by gbouwen       #+#    #+#                 */
+/*   Updated: 2020/10/15 10:56:45 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#include "Goblin.hpp"
 
-# include "AMateria.hpp"
-
-class AMateria;
-
-class ICharacter
+Goblin::Goblin(void) : Enemy("Goblin", 10000)
 {
+	std::cout << "* click click click *" << std::endl;
+	return ;
+}
 
-public:
-
-	virtual ~ICharacter(void) {}
-
-	virtual std::string	const	&getName(void) const = 0;
-	virtual void				equip(AMateria *m) = 0;
-	virtual void				unequip(int idx) = 0;
-	virtual void				use(int idx, ICharacter &target) = 0;
-};
-
-#endif
+Goblin::~Goblin(void)
+{
+	std::cout << "* sad goblin noise *" << std::endl;
+	return ;
+}

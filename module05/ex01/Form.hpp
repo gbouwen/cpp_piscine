@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:18:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 13:43:38 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 14:06:24 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	Form
 
 public:
 
+	Form(void);
 	Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute);
 	Form(Form const &src);
 	~Form(void);
@@ -84,12 +85,10 @@ public:
 
 private:
 
-	Form(void);
-
-	std::string		_name;
-	bool			_signed;
-	unsigned int	_gradeToSign;
-	unsigned int	_gradeToExecute;
+	std::string const	_name;
+	bool				_signed;
+	unsigned int const 	_gradeToSign;
+	unsigned int const	_gradeToExecute;
 };
 
 std::ostream	&operator<<(std::ostream &o, Form const &src);

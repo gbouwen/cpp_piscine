@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 13:35:37 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/14 12:32:02 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/15 11:09:31 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ int	main(void)
 	Peon		joe("Joe");
 	Alien		jeff("Jeff");
 	Zombie		john("John");
+	Zombie		jj(john);
+	Zombie		j = jj;
 
-	std::cout << robert << jim << joe << jeff << john;
+	std::cout << robert << jim << joe << jeff << john << jj << j;
 
 	robert.polymorph(jim);
 	robert.polymorph(joe);

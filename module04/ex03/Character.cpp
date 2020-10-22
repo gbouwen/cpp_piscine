@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/07 14:19:14 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/08 16:05:13 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/16 10:41:38 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,15 @@ Character::Character(std::string name) : _name(name), _count(0)
 
 Character::Character(Character const &src)
 {
-	*this = src;
+	if (this != &src)
+	{
+		for (unsigned int i = 0; i < this->_count; i++)
+			delete (this->_inventory[i]);
+		this->_name = src._name;
+		this->_count = src._count;
+		for (unsigned int i = 0; i < this->_count; i++)
+			this->_inventory[i] = src._inventory[i]->clone();
+	}
 	return ;
 }
 

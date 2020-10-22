@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:18:23 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 13:53:38 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 15:54:57 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ class	Form
 
 public:
 
+	Form(void);
 	Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute, std::string target);
 	Form(Form const &src);
-	~Form(void);
+	virtual ~Form(void);
 
 	Form	&operator=(Form const &rhs);
 
@@ -37,7 +38,10 @@ public:
 	std::string		getTarget(void) const;
 
 	void			beSigned(Bureaucrat	const &src);
-	void			execute(Bureaucrat const &executor) const;
+	virtual void	execute(Bureaucrat const &executor) const = 0;
+	void			checkRequirements(Bureaucrat const &executor) const;
+
+	void			setSigned(bool isSigned);
 
 	class GradeTooHighException : public std::exception
 	{
@@ -96,18 +100,16 @@ public:
 
 	private:
 
-		std::string	_errorMessage;
+		std::string _errorMessage;
 	};
 
 private:
 
-	Form(void);
-
-	std::string		_name;
-	bool			_signed;
-	unsigned int	_gradeToSign;
-	unsigned int	_gradeToExecute;
-	std::string		_target;
+	std::string const	_name;
+	bool				_signed;
+	unsigned int const 	_gradeToSign;
+	unsigned int const	_gradeToExecute;
+	std::string const	_target;
 };
 
 std::ostream	&operator<<(std::ostream &o, Form const &src);

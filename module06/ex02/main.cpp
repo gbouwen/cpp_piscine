@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/21 17:30:16 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 18:00:44 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/20 10:44:56 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,9 @@ int	main(void)
 
 	srand(time(NULL));
 	base = generate();
+	std::cout << "identify from pointer: " << std::endl;
 	identify_from_pointer(base);
+	std::cout << "identify from reference: " << std::endl;
 	identify_from_reference(*base);
 	delete (base);
 	return (0);

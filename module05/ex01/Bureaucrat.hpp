@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 10:19:19 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 13:40:57 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 13:59:19 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Bureaucrat
 
 public:
 
+	Bureaucrat(void);
 	Bureaucrat(std::string name, unsigned int grade);
 	Bureaucrat(Bureaucrat const &src);
 	~Bureaucrat(void);
@@ -69,10 +70,8 @@ public:
 
 private:
 
-	Bureaucrat(void);
-
-	std::string		_name;
-	unsigned int	_grade;
+	std::string const	_name;
+	unsigned int		_grade;
 
 };
 

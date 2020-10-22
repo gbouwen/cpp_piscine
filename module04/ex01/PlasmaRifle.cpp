@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/02 11:42:18 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/14 11:38:27 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/15 10:55:34 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,14 @@
 
 PlasmaRifle::PlasmaRifle(void) : AWeapon("Plasma Rifle", 21, 5)
 {
-	return ;
-}
-
-PlasmaRifle::PlasmaRifle(PlasmaRifle const &src)
-{
-	*this = src;
+	std::cout << "PlasmaRifle is born" << std::endl;
 	return ;
 }
 
 PlasmaRifle::~PlasmaRifle(void)
 {
+	std::cout << "PlasmaRifle is dead" << std::endl;
 	return ;
-}
-
-PlasmaRifle	&PlasmaRifle::operator=(PlasmaRifle const &rhs)
-{
-	AWeapon::operator=(rhs);
-	return (*this);
 }
 
 void	PlasmaRifle::attack(void) const

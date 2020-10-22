@@ -6,7 +6,7 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/28 17:43:52 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/10/02 14:33:00 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/02 14:30:16 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	testSmall(void)
 	spOne.addNumber(-2147483648);
 	try
 	{
-		std::cout << "shortest span: " << spOne.shortestSpan() << std::endl;
-		std::cout << "longest span: " << spOne.longestSpan() << std::endl;
+		std::cout << spOne.shortestSpan() << std::endl;
+		std::cout << spOne.longestSpan() << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -48,8 +48,8 @@ void	testLarge(void)
 	spTwo.addRange(vector.begin(), vector.end());
 	try
 	{
-		std::cout << "shortest span: " << spTwo.shortestSpan() << std::endl;
-		std::cout << "longest span: " << spTwo.longestSpan() << std::endl;
+		std::cout << spTwo.shortestSpan() << std::endl;
+		std::cout << spTwo.longestSpan() << std::endl;
 	}
 	catch (std::exception &e)
 	{
@@ -80,8 +80,8 @@ void	testLargeFull(void)
 	}
 	try
 	{
-		std::cout << "shortest span: " << spTwo.shortestSpan() << std::endl;
-		std::cout << "longest span: " << spTwo.longestSpan() << std::endl;
+		std::cout << spTwo.shortestSpan() << std::endl;
+		std::cout << spTwo.longestSpan() << std::endl;
 	}
 	catch (std::exception &e)
 	{

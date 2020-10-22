@@ -6,14 +6,14 @@
 #    By: gbouwen <gbouwen@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/07/29 09:29:26 by gbouwen       #+#    #+#                  #
-#    Updated: 2020/09/16 10:09:09 by gbouwen       ########   odam.nl          #
+#    Updated: 2020/10/19 13:35:07 by gbouwen       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = convert
 CC = clang++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCE_CPP = main.cpp detect.cpp set.cpp cast.cpp print.cpp
+SOURCE_CPP = main.cpp pseudoLiterals.cpp validate.cpp detect.cpp print.cpp
 OBJECT_FILES = $(SOURCE_CPP:.cpp=.o)
 
 GREEN = \033[0;38;5;114m

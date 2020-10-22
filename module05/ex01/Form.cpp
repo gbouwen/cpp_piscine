@@ -6,31 +6,30 @@
 /*   By: gbouwen <gbouwen@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/14 13:36:47 by gbouwen       #+#    #+#                 */
-/*   Updated: 2020/09/22 13:45:29 by gbouwen       ########   odam.nl         */
+/*   Updated: 2020/10/21 14:48:04 by gbouwen       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void)
+Form::Form(void) : _name("default"), _signed(false), _gradeToSign(1), _gradeToExecute(1)
 {
 	return ;
 }
 
-Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute) : _signed(false)
+Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute) :	_name(name), _signed(false),
+																						_gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
-	this->_name = name;
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw (Form::GradeTooHighException("Grade too high"));
 	if (gradeToSign > 150 || gradeToExecute > 150)
 		throw (Form::GradeTooLowException("Grade too low"));
-	this->_gradeToSign = gradeToSign;
-	this->_gradeToExecute = gradeToExecute;
+	return ;
 }
 
-Form::Form(Form const &src)
+Form::Form(Form const &src) : _name("default"), _gradeToSign(1), _gradeToExecute(1)
 {
-	*this = src;
+	*this = Form::operator=(src);
 	return ;
 }
 
@@ -42,12 +41,7 @@ Form::~Form(void)
 Form	&Form::operator=(Form const &rhs)
 {
 	if (this != &rhs)
-	{
-		this->_name = rhs._name;
 		this->_signed = rhs._signed;
-		this->_gradeToSign = rhs._gradeToSign;
-		this->_gradeToExecute = rhs._gradeToExecute;
-	}
 	return (*this);
 }
 
